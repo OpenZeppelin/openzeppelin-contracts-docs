@@ -1,6 +1,8 @@
 OpenZeppelin Documentation Generator
 ====================================
 
+Generates OpenZeppelin API docs at https://openzeppelin.org/api/docs/.
+
 ## Generating Docs
 
 To generate documentation from scratch, run:
