@@ -27,4 +27,4 @@ This command will automatically:
 
 * Run [solidity-docgen](https://github.com/spalladino/solidity-docgen) on the OpenZeppelin codebase at the given tag.
 * Generate a new Docusaurus version matching the OpenZeppelin release tag.
-* Build the Docusaurus project, and copy the build products into the repository's root directory.
+* Build the Docusaurus project, yielding the result in `docs/website/build`.

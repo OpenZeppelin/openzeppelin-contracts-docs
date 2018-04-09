@@ -31,9 +31,9 @@ function main(argv) {
     handleErrorCode(shell.exec(`git checkout -b ${tag} ${tag}`))
     handleErrorCode(shell.exec(`npx solidity-docgen ${repoDir} ${contractsDir} ${outputDir} --exclude mocks,examples`))
     shell.cd(websiteDir)
+    handleErrorCode(shell.exec(`yarn install`))
     handleErrorCode(shell.exec(`npm run version ${version}`))
     handleErrorCode(shell.exec('npm run build'))
-    shell.mv(apiDir, parentDir)
   }
   finally {
     shell.rm('-rf', tempDir)
