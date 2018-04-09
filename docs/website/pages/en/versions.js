@@ -49,7 +49,7 @@ class Versions extends React.Component {
                 {versions.map(
                   version => {
                     return version !== latestVersion && (
-                      <tr>
+                      <tr key={version}>
                         <th>{version}</th>
                         <td>
                           <a href={`${siteConfig.baseUrl}docs/${version}/open-zeppelin.html`}>Documentation</a>
