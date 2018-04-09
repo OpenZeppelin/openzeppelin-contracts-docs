@@ -1,7 +1,7 @@
 OpenZeppelin Documentation Generator
 ====================================
 
-# Generating Docs
+## Generating Docs
 
 To generate documentation from scratch, run:
 
