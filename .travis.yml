@@ -1,0 +1,21 @@
+dist: trusty
+sudo: required
+
+language: node_js
+
+before_install: sudo apt-get install --y curl jq
+
+script:
+  - npm run bump-docs -- $(curl --silent
+"https://api.github.com/repos/OpenZeppelin/openzeppelin-solidity/releases/latest" | jq
+ -r .tag_name)
+  - npm run rebuild-docs
+
+deploy:
+  provider: s3
+  access_key_id: "AKIAJLHM2QHNSX3YPQ6Q"
+  secret_access_key: $AWS_SECRET_KEY
+  bucket: "docs.openzeppelin.org"
+  skip_cleanup: true
+  local_dir: docs/website/build/api/
+  upload-dir: api/
