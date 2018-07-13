@@ -1,0 +1,19 @@
+#!/bin/bash
+#
+# Bump the docs sources to the latest openzeppelin-solidity release.
+# If there is a new release, push the changes to the openzeppelin-docs
+# repository.
+
+set -ev
+
+readonly VERSION="$(curl --silent "https://api.github.com/repos/OpenZeppelin/openzeppelin-solidity/releases/latest" | jq -r .tag_name)"
+
+# bump-docs fails if the version is already generated. If so, just exit.
+npm run bump-docs -- "${VERSION}" || exit 0
+
+# Push the updated docs sources to the openzeppelin-docs repository.
+git config user.name "openzeppelin-lurch"
+git config user.email "lurch@openzeppelin.org"
+git add .
+git commit -m "Bump the docs to version "{$VERSION}""
+git push "https://"${GH_TOKEN}"@github.com/OpenZeppelin/openzeppelin-docs.git"
