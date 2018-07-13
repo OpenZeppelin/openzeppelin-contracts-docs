@@ -7,6 +7,9 @@
     ]
   },
   "docs-api": {
+    "ACCESS": [
+      "access_SignatureBouncer"
+    ],
     "CROWDSALE": [
       "crowdsale_Crowdsale"
     ],
@@ -33,7 +36,6 @@
     ],
     "LIFECYCLE": [
       "lifecycle_Destructible",
-      "lifecycle_Migrations",
       "lifecycle_Pausable",
       "lifecycle_TokenDestructible"
     ],
@@ -52,6 +54,7 @@
       "ownership_Heritable",
       "ownership_NoOwner",
       "ownership_Ownable",
+      "ownership_Superuser",
       "ownership_Whitelist"
     ],
     "OWNERSHIP / RBAC": [
@@ -71,7 +74,9 @@
       "token_ERC20_ERC20Basic",
       "token_ERC20_MintableToken",
       "token_ERC20_PausableToken",
+      "token_ERC20_RBACMintableToken",
       "token_ERC20_SafeERC20",
+      "token_ERC20_StandardBurnableToken",
       "token_ERC20_StandardToken",
       "token_ERC20_TokenTimelock",
       "token_ERC20_TokenVesting"
@@ -95,7 +100,6 @@
       "AddressUtils",
       "Bounty",
       "Bounty_Target",
-      "DayLimit",
       "ECRecovery",
       "LimitBalance",
       "MerkleProof",
