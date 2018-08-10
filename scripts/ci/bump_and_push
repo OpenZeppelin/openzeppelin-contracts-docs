@@ -1,15 +1,21 @@
 #!/bin/bash
 #
-# Bump the docs sources to the latest openzeppelin-solidity release.
-# If there is a new release, push the changes to the openzeppelin-docs
-# repository.
+# Bump the docs sources to a new openzeppelin-solidity release.
+# The changes are pushed to the openzeppelin-docs repository.
+# Argument:
+#   version: the version of the new release.
 
 set -ev
 
-readonly VERSION="$(curl --silent "https://api.github.com/repos/OpenZeppelin/openzeppelin-solidity/releases/latest" | jq -r .tag_name)"
+if [ "$#" -lt 1 ]; then
+    echo "Usage: $0 <version>"
+    exit 1
+fi
 
-# bump-docs fails if the version is already generated. If so, just exit.
-npm run bump-docs -- "${VERSION}" || exit 0
+readonly VERSION="$1"
+
+# bump-docs will fail if the version is already generated.
+npm run bump-docs -- "${VERSION}"
 
 # Push the updated docs sources to the openzeppelin-docs repository.
 git config user.name "openzeppelin-lurch"

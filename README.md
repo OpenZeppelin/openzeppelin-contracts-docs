@@ -32,10 +32,9 @@ This command will automatically:
 
 The deployment of the documentation website is automated with Travis CI.
 
-Every push to this repository triggers the `bump-docs` script using the latest
-release of `openzeppelin-solidity`. If there is a new release, the new docs
-source files are pushed to this repository and then the generated docs website
-is pushed to the `api` dir of the `openzeppelin` S3 bucket.
-
-A daily cron job triggers the same script if it has not been run during the
-day.
+Every push of a release tag to the `openzeppelin-solidity` repository will
+trigger the Travis job of this repository, through the Travis API. This job
+will run the `bump-docs` script using the name of the tag passed on the API
+request. The documentation source files will be pushed to this repository and
+then the generated docs website will be pushed to the `api` dir of the
+`openzeppelin` S3 bucket.

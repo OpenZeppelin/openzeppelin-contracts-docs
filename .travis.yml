@@ -5,13 +5,11 @@ language: node_js
 node_js: "8.11.3"
 
 before_install:
-  - sudo apt-get install --yes curl jq
-  - sudo add-apt-repository --yes ppa:ethereum/ethereum
   - sudo apt-get update
   - sudo apt-get install --yes solc
 
 script:
-  - if [[ "${TRAVIS_PULL_REQUEST}" = 'false' ]]; then ./scripts/ci/bump_and_push; fi
+  - if [[ "${TRAVIS_PULL_REQUEST}" = 'false' && "${TRAVIS_EVENT_TYPE}" = 'api' ]]; then ./scripts/ci/bump_and_push "${VERSION}"; fi
 
 deploy:
   provider: s3
