@@ -5,6 +5,7 @@ language: node_js
 node_js: "8.11.3"
 
 before_install:
+  - sudo add-apt-repository --yes ppa:ethereum/ethereum
   - sudo apt-get update
   - sudo apt-get install --yes solc
 
