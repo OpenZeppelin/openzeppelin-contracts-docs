@@ -8,7 +8,8 @@
   },
   "docs-api": {
     "ACCESS": [
-      "access_SignatureBouncer"
+      "access_SignatureBouncer",
+      "access_Whitelist"
     ],
     "CROWDSALE": [
       "crowdsale_Crowdsale"
@@ -17,9 +18,6 @@
       "crowdsale_distribution_FinalizableCrowdsale",
       "crowdsale_distribution_PostDeliveryCrowdsale",
       "crowdsale_distribution_RefundableCrowdsale"
-    ],
-    "CROWDSALE / DISTRIBUTION / UTILS": [
-      "crowdsale_distribution_utils_RefundVault"
     ],
     "CROWDSALE / EMISSION": [
       "crowdsale_emission_AllowanceCrowdsale",
@@ -33,6 +31,10 @@
       "crowdsale_validation_IndividuallyCappedCrowdsale",
       "crowdsale_validation_TimedCrowdsale",
       "crowdsale_validation_WhitelistedCrowdsale"
+    ],
+    "INTROSPECTION": [
+      "introspection_ERC165",
+      "introspection_SupportsInterfaceWithLookup"
     ],
     "LIFECYCLE": [
       "lifecycle_Destructible",
@@ -54,16 +56,22 @@
       "ownership_Heritable",
       "ownership_NoOwner",
       "ownership_Ownable",
-      "ownership_Superuser",
-      "ownership_Whitelist"
+      "ownership_Superuser"
     ],
     "OWNERSHIP / RBAC": [
       "ownership_rbac_RBAC",
       "ownership_rbac_Roles"
     ],
     "PAYMENT": [
+      "payment_ConditionalEscrow",
+      "payment_Escrow",
       "payment_PullPayment",
+      "payment_RefundEscrow",
       "payment_SplitPayment"
+    ],
+    "PROPOSALS / ERC1046": [
+      "proposals_ERC1046_TokenMetadata_ERC20TokenMetadata",
+      "proposals_ERC1046_TokenMetadata_ERC20WithMetadata"
     ],
     "TOKEN / ERC20": [
       "token_ERC20_BasicToken",
@@ -91,10 +99,6 @@
       "token_ERC721_ERC721Token",
       "token_ERC721_ERC721_ERC721Enumerable",
       "token_ERC721_ERC721_ERC721Metadata"
-    ],
-    "TOKEN / ERC827": [
-      "token_ERC827_ERC827",
-      "token_ERC827_ERC827Token"
     ],
     "UNCATEGORIZED": [
       "AddressUtils",
