@@ -18,5 +18,5 @@ deploy:
   secret_access_key: $AWS_SECRET_KEY
   bucket: "openzeppelin.org"
   skip_cleanup: true
-  local_dir: docs/website/build/api/
-  upload-dir: api/
+  local_dir: docs/website/build/api
+  upload-dir: api
