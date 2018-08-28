@@ -1,0 +1,7 @@
+---
+id: version-1.12.0-introspection_ERC165
+title: ERC165
+original_id: introspection_ERC165
+---
+
+<div class="contract-doc"><div class="contract"><h2 class="contract-header"><span class="contract-kind">interface</span> ERC165</h2><p class="description">Https://github.com/ethereum/EIPs/blob/master/EIPS/eip-165.md.</p><div class="source">Source: <a href="https://github.com/OpenZeppelin/zeppelin-solidity/blob/v1.12.0/contracts/introspection/ERC165.sol" target="_blank">introspection/ERC165.sol</a></div></div><div class="index"><h2>Index</h2><ul><li><a href="introspection_ERC165.html#supportsInterface">supportsInterface</a></li></ul></div><div class="reference"><h2>Reference</h2><div class="functions"><h3>Functions</h3><ul><li><div class="item function"><span id="supportsInterface" class="anchor-marker"></span><h4 class="name">supportsInterface</h4><div class="body"><code class="signature"><span>abstract </span>function <strong>supportsInterface</strong><span>(bytes4 _interfaceId) </span><span>external </span><span>view </span><span>returns  (bool) </span></code><hr/><div class="description"><p>Interface identification is specified in ERC-165. This function uses less than 30,000 gas., Query if a contract implements an interface.</p></div><dl><dt><span class="label-parameters">Parameters:</span></dt><dd><div><code>_interfaceId</code> - The interface identifier, as specified in ERC-165</div></dd><dt><span class="label-return">Returns:</span></dt><dd>bool</dd></dl></div></div></li></ul></div></div></div>

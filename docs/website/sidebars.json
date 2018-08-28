@@ -11,6 +11,10 @@
       "access_SignatureBouncer",
       "access_Whitelist"
     ],
+    "ACCESS / RBAC": [
+      "access_rbac_RBAC",
+      "access_rbac_Roles"
+    ],
     "CROWDSALE": [
       "crowdsale_Crowdsale"
     ],
@@ -58,10 +62,6 @@
       "ownership_Ownable",
       "ownership_Superuser"
     ],
-    "OWNERSHIP / RBAC": [
-      "ownership_rbac_RBAC",
-      "ownership_rbac_Roles"
-    ],
     "PAYMENT": [
       "payment_ConditionalEscrow",
       "payment_Escrow",
@@ -102,6 +102,7 @@
     ],
     "UNCATEGORIZED": [
       "AddressUtils",
+      "AutoIncrementing",
       "Bounty",
       "Bounty_Target",
       "ECRecovery",
