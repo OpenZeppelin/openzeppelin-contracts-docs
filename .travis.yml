@@ -1,0 +1,22 @@
+dist: trusty
+sudo: required
+
+language: node_js
+node_js: "8.11.3"
+
+before_install:
+  - sudo add-apt-repository --yes ppa:ethereum/ethereum
+  - sudo apt-get update
+  - sudo apt-get install --yes solc
+
+script:
+  - if [[ "${TRAVIS_PULL_REQUEST}" = 'false' && "${TRAVIS_EVENT_TYPE}" = 'api' ]]; then ./scripts/ci/bump_and_push "${VERSION}"; fi
+
+deploy:
+  provider: s3
+  access_key_id: "AKIAJLHM2QHNSX3YPQ6Q"
+  secret_access_key: $AWS_SECRET_KEY
+  bucket: "docs.openzeppelin.org"
+  skip_cleanup: true
+  local_dir: docs/website/build/api/
+  upload-dir: api/
