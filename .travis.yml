@@ -16,7 +16,7 @@ deploy:
   provider: s3
   access_key_id: "AKIAJLHM2QHNSX3YPQ6Q"
   secret_access_key: $AWS_SECRET_KEY
-  bucket: "docs.openzeppelin.org"
+  bucket: "openzeppelin.org"
   skip_cleanup: true
   local_dir: docs/website/build/api/
   upload-dir: api/
