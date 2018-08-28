@@ -22,4 +22,4 @@ git config user.name "openzeppelin-lurch"
 git config user.email "lurch@openzeppelin.org"
 git add .
 git commit -m "Bump the docs to version ${VERSION}"
-git push "https://${GH_TOKEN}@github.com/OpenZeppelin/openzeppelin-docs.git"
+git push "https://${GH_TOKEN}@github.com/OpenZeppelin/openzeppelin-docs.git" HEAD:master
