@@ -29,8 +29,8 @@ const siteConfig = {
       label: 'Github',
     },
   ],
-  headerIcon: 'img/logo-zeppelin.png',
-  footerIcon: 'img/symbol-zeppelin.png',
+  headerIcon: 'img/openzeppelin-logo.svg',
+  footerIcon: 'img/openzeppelin-symbol.svg',
   favicon: 'img/favicon.png',
   colors: {
     primaryColor: '#5CB6E4',
