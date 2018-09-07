@@ -8,7 +8,7 @@ OpenZeppelin provides a ton of useful utilities that you can use in your project
 ## Cryptography
 
 - [ECDSA.sol](https://github.com/OpenZeppelin/openzeppelin-solidity/blob/master/contracts/cryptography/ECDSA.sol) — provides fucntions for recovering and managing Ethereum account ECDSA signatures:
-  - include using `using ECDSA for bytes32;`
+  - to use it, declare: `using ECDSA for bytes32;`
   - signatures are tightly packed, 65 byte `bytes` that look like `{v (1)} {r (32)} {s (32)}`
     - this is the default from `web3.eth.sign` so you probably don't need to worry about this format
   - recover the signer using `myDataHash.recover(signature)`
@@ -28,7 +28,7 @@ keccack256(
 .recover(signature)
 ```
 
-- [MerkleProof.sol](https://github.com/OpenZeppelin/openzeppelin-solidity/blob/master/contracts/cryptography/MerkleProof.sol) — provides `verifyProof(...)` for verifying merkle proofs.
+- [MerkleProof.sol](https://github.com/OpenZeppelin/openzeppelin-solidity/blob/master/contracts/cryptography/MerkleProof.sol) — provides `verify(...)` for verifying merkle proofs.
 
 
 ## Introspection
@@ -36,7 +36,7 @@ keccack256(
 In solidity, it's frequently helpful to know whether or not a contract supports an interface you'd like to use. ERC165 is a standard that helps do runtime interface detection. OpenZeppelin provides some helpers, both for implementing ERC165 in your contracts and querying other contracts:
 
 - [IERC615](https://github.com/OpenZeppelin/openzeppelin-solidity/blob/master/contracts/introspection/IERC165.sol) — this is the ERC165 interface that defines `supportsInterface(...)`. When implement ERC615, you'll inherit this contract.
-- [SupportsInterfaceWithLookup](https://github.com/OpenZeppelin/openzeppelin-solidity/blob/master/contracts/introspection/SupportsInterfaceWithLookup.sol) — inherit this function if you'd like to support interface detection using a simple lookup table in contract storage. You can register interfaces using `_registerInterface(bytes4)`. Check out example usage as part of ERC721.
+- [ERC165](https://github.com/OpenZeppelin/openzeppelin-solidity/blob/master/contracts/introspection/SupportsInterfaceWithLookup.sol) — inherit this function if you'd like to support interface detection using a lookup table in contract storage. You can register interfaces using `_registerInterface(bytes4)`. Check out example usage as part of ERC721.
 - [ERC165Checker](https://github.com/OpenZeppelin/openzeppelin-solidity/blob/master/contracts/introspection/ERC165Checker.sol) — ERC165 simplifies the process of checking whether or not a contract supports an interface you care about.
   - include with `using ERC165Checker for address;`
   - `myAddress.supportsInterface(bytes4)`
@@ -81,10 +81,10 @@ Easy!
 
 ## Payment
 
-Want to split some payments between multiple people? Maybe you have an app that sends 30% of art purchases to the original creator and 70% of the profits to the current owner; you an build that with [`SplitPayment`](https://github.com/OpenZeppelin/openzeppelin-solidity/blob/master/contracts/payment/SplitPayment.sol)!.
+Want to split some payments between multiple people? Maybe you have an app that sends 30% of art purchases to the original creator and 70% of the profits to the current owner; you can build that with [`SplitPayment`](https://github.com/OpenZeppelin/openzeppelin-solidity/blob/master/contracts/payment/SplitPayment.sol)!.
 
 
-In solidity, there are some security concerns with blindly sending money to accounts, since it allows them to execute arbitrary code. You can read up on these security concerns in the [solidity security best practices]() website. One of the ways to fix re-rentrancy and stalling problems is, instead of immediately sending Ether to accounts that need it, you can use [`PullPayment`](https://github.com/OpenZeppelin/openzeppelin-solidity/blob/master/contracts/payment/PullPayment.sol), which offers an `asyncSend` function for sending money to something and requesting that they `withdraw()` it later.
+In solidity, there are some security concerns with blindly sending money to accounts, since it allows them to execute arbitrary code. You can read up on these security concerns in the [Ethereum Smart Contract Best Practices](https://consensys.github.io/smart-contract-best-practices/) website. One of the ways to fix re-rentrancy and stalling problems is, instead of immediately sending Ether to accounts that need it, you can use [`PullPayment`](https://github.com/OpenZeppelin/openzeppelin-solidity/blob/master/contracts/payment/PullPayment.sol), which offers an `asyncSend` function for sending money to something and requesting that they `withdraw()` it later.
 
 If you want to Escrow some funds, check out [`Escrow`](https://github.com/OpenZeppelin/openzeppelin-solidity/blob/master/contracts/payment/Escrow.sol) and [`ConditionalEscrow`](https://github.com/OpenZeppelin/openzeppelin-solidity/blob/master/contracts/payment/ConditionalEscrow.sol) for governing the release of some escrowed Ether.
 

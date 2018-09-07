@@ -5,7 +5,7 @@ title: Learn About Crowdsales
 
 Crowdsales are a popular use for Ethereum; they let you allocate tokens to network participants in various ways, mostly in exchange for Ether. They come in a variety of shapes and flavors, so let's go over the various types available in OpenZeppelin and how to use them.
 
-Crowdsales have a bunch of different propertie, but here are some important ones:
+Crowdsales have a bunch of different properties, but here are some important ones:
 - Price & Rate Configuration
   - Does your crowdsale sell tokens at a fixed price?
   - Does the price change over time or as a function of demand?
@@ -20,7 +20,7 @@ Crowdsales have a bunch of different propertie, but here are some important ones
   - Does distribution of funds happen in real-time or after the crowdsale?
   - Can participants receive a refund if the goal is not met?
 
-To manage all of the different combinations and flavors of crowdsales, OpenZeppelin provides a highly configurable [`Crowdsale.sol`](https://github.com/OpenZeppelin/openzeppelin-solidity/blob/master/contracts/crowdsale/Crowdsale.sol) base contract that can be combined with various other functionality to construct a bespoke crowdsale.
+To manage all of the different combinations and flavors of crowdsales, OpenZeppelin provides a highly configurable [`Crowdsale.sol`](https://github.com/OpenZeppelin/openzeppelin-solidity/blob/master/contracts/crowdsale/Crowdsale.sol) base contract that can be combined with various other functionalities to construct a bespoke crowdsale.
 
 ## Crowdsale Rate
 
@@ -37,7 +37,7 @@ In Ether, the smallest unit of the currency is wei, and `1 ETH === 10^18 wei`. I
 - The smallest unit of a token is "bits" or `TKNbits`.
 - The display value of a token is `TKN`, which is `TKNbits * 10^(decimals)`
 
-What people usually call "one token" is actually a bunch of TKNbits, displayed to look like `1 TKN`. This is the same relationship that Ether and wei have. And what you're _always_ doing calculations in is **TKNbits**.
+What people usually call "one token" is actually a bunch of TKNbits, displayed to look like `1 TKN`. This is the same relationship that Ether and wei have. And what you're _always_ doing calculations in is **TKNbits and wei**.
 
 So, if you want to issue someone "one token for every 2 wei" and your decimals are 18, your rate is `0.5e17`. Then, when I send you `2 wei`, your crowdsale issues me `2 * 0.5e17 TKNbits`, which is exactly equal to `10^18 TKNbits` and is displayed as `1 TKN`.
 
@@ -53,7 +53,7 @@ One more for practice: if I want to issue "1 TKN for every dollar (USD) in Ether
 - therefore the rate is `2.5 * 10^15 wei === 10^18 TKNbits`, or `1 wei = 400 TKNbits`
 - therefore, our rate is `400`
 
-(this process is pretty strightforward when you keep 18 decimals, the same as Ether/wei)
+(this process is pretty straightforward when you keep 18 decimals, the same as Ether/wei)
 
 
 ## Token Emission
@@ -93,12 +93,12 @@ contract MyToken is MintableToken {
 
 contract MyCrowdsale is MintedCrowdsale, Crowdsale {
     constructor(
-        uint256 _rate,    // rate in TKNbits
-        address _wallet,
-        ERC20 _token
+        uint256 rate,    // rate in TKNbits
+        address wallet,
+        ERC20 token
     )
         MintedCrowdsale()
-        Crowdsale(_rate, _wallet, _token)
+        Crowdsale(rate, wallet, token)
         public
     {
 
@@ -132,13 +132,13 @@ Use an `AllowanceCrowdsale` to send tokens from another wallet to the participan
 ```solidity
 contract MyCrowdsale is AllowanceCrowdsale, Crowdsale {
     constructor(
-        uint256 _rate,
-        address _wallet,
-        ERC20 _token,
-        address _tokenWallet  // <- new argument
+        uint256 rate,
+        address wallet,
+        ERC20 token,
+        address tokenWallet  // <- new argument
     )
-        AllowanceCrowdsale(_tokenWallet)  // <- used here
-        Crowdsale(_rate, _wallet, _token)
+        AllowanceCrowdsale(tokenWallet)  // <- used here
+        Crowdsale(rate, wallet, token)
         public
     {
 
@@ -167,21 +167,21 @@ Simply mix and match these crowdsale flavors to your heart's content:
 contract MyCrowdsale is CappedCrowdsale, TimedCrowdsale, Crowdsale {
 
     constructor(
-        uint256 _rate,         // rate, in TKNbits
-        address _wallet,       // wallet to send Ether
-        ERC20 _token,          // the token
-        uint256 _cap,          // total cap, in wei
-        uint256 _openingTime,  // opening time in unix epoch seconds
-        uint256 _closingTime   // closing time in unix epoch seconds
+        uint256 rate,         // rate, in TKNbits
+        address wallet,       // wallet to send Ether
+        ERC20 token,          // the token
+        uint256 cap,          // total cap, in wei
+        uint256 openingTime,  // opening time in unix epoch seconds
+        uint256 closingTime   // closing time in unix epoch seconds
     )
-        CappedCrowdsale(_cap)
-        TimedCrowdsale(_openingTime, _closingTime)
-        Crowdsale(_rate, _wallet, _token)
+        CappedCrowdsale(cap)
+        TimedCrowdsale(openingTime, closingTime)
+        Crowdsale(rate, wallet, token)
         public
     {
         // nice, we just created a crowdsale that's only open
         // for a certain amount of time
-        // and stops accepting contributions once it reaches _cap
+        // and stops accepting contributions once it reaches `cap`
     }
 }
 ```
@@ -196,26 +196,49 @@ OpenZeppelin is here to make that easy!
 
 ### PostDeliveryCrowdsale
 
-The [PostDeliveryCrowdsale](https://github.com/OpenZeppelin/openzeppelin-solidity/blob/master/contracts/crowdsale/distribution/PostDeliveryCrowdsale.sol), as its name implies, distributes tokens after the crowdsale as finished, letting users call `withdrawTokens()` in order to claim the tokens they've purchased.
+The [PostDeliveryCrowdsale](https://github.com/OpenZeppelin/openzeppelin-solidity/blob/master/contracts/crowdsale/distribution/PostDeliveryCrowdsale.sol), as its name implies, distributes tokens after the crowdsale has finished, letting users call `withdrawTokens()` in order to claim the tokens they've purchased.
+
+```solidity
+contract MyCrowdsale is PostDeliveryCrowdsale, TimedCrowdsale, Crowdsale {
+
+    constructor(
+        uint256 rate,         // rate, in TKNbits
+        address wallet,       // wallet to send Ether
+        ERC20 token,          // the token
+        uint256 openingTime,  // opening time in unix epoch seconds
+        uint256 closingTime   // closing time in unix epoch seconds
+    )
+        PostDeliveryCrowdsale()
+        TimedCrowdsale(startTime, closingTime)
+        Crowdsale(rate, wallet, token)
+        public
+    {
+        // nice! this Crowdsale will keep all of the tokens until the end of the crowdsale
+        // and then users can `withdrawTokens()` to get the tokens they're owed
+    }
+}
+```
 
 ### RefundableCrowdsale
 
 The [RefundableCrowdsale](https://github.com/OpenZeppelin/openzeppelin-solidity/blob/master/contracts/crowdsale/distribution/RefundableCrowdsale.sol) offers to refund users if a minimum goal is not reached. If the goal is not reached, the users can `claimRefund()` to get their Ether back.
 
 
-```
+```solidity
 contract MyCrowdsale is RefundableCrowdsale, Crowdsale {
 
     constructor(
-        uint256 _rate,         // rate, in TKNbits
-        address _wallet,       // wallet to send Ether
-        ERC20 _token,          // the token
-        uint256 _goal          // the minimum goal, in wei
+        uint256 rate,         // rate, in TKNbits
+        address wallet,       // wallet to send Ether
+        ERC20 token,          // the token
+        uint256 goal          // the minimum goal, in wei
     )
-        RefundableCrowdsale(_goal)
-        Crowdsale(_rate, _wallet, _token)
+        RefundableCrowdsale(goal)
+        Crowdsale(rate, wallet, token)
         public
     {
+        // nice! this crowdsale will, if it doesn't hit `goal`, allow everyone to get their money back
+        // by calling claimRefund(...)
     }
 }
 ```
