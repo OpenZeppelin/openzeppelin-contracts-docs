@@ -38,13 +38,13 @@ Ownable also lets you:
 + `renounceOwnership()` to remove the owner altogether, useful for decentralizing control of your contract. **⚠ Warning!** Removing the owner altogether will mean that administrative tasks that are protected by `onlyOwner` will no longer be callable!
 
 
-Note that any contract that supports sending transactions can also be the owner of a contract; the only requirement is that the owner has an Ethereum address, so it could be a Gnosis Multisig or Gnosis Safe, an Aragon DAO, an ERC725/uPort idenity contract, or a totally custom contract that _you_ create.
+Note that any contract that supports sending transactions can also be the owner of a contract; the only requirement is that the owner has an Ethereum address, so it could be a Gnosis Multisig or Gnosis Safe, an Aragon DAO, an ERC725/uPort identity contract, or a totally custom contract that _you_ create.
 
-In this way you can use _composability_ to add additional layers of access control complexity to your contracts. Instead of having a single Ethereum Off-Chain Account (EOA) as the owner, you can replace them with a 2/3 multisg run by your project leads, for example.
+In this way you can use _composability_ to add additional layers of access control complexity to your contracts. Instead of having a single Ethereum Off-Chain Account (EOA) as the owner, you can replace them with a 2/3 multisig run by your project leads, for example.
 
 ### Examples in OpenZeppelin
 
-You'll notice that none of the OpenZeppelin contracts use Ownable, though! This is because there are more flexible ways of providing access control that are more in-line with our philosophy about reusable contracts. For most contracts, We'll use `Roles` to govern who can do what. There are some cases, though—like with `Escrow`—where there's a direct relationship between contracts. In those cases, we'll use [`Secondary`](https://github.com/OpenZeppelin/openzeppelin-solidity/blob/master/contracts/ownership/Secondary.sol) to create a "secondary" contract that allows a "primary" contract to manage it.
+You'll notice that none of the OpenZeppelin contracts use Ownable, though! This is because there are more flexible ways of providing access control that are more in-line with our reusable contract philosophy. For most contracts, We'll use `Roles` to govern who can do what. There are some cases, though—like with `Escrow`—where there's a direct relationship between contracts. In those cases, we'll use [`Secondary`](https://github.com/OpenZeppelin/openzeppelin-solidity/blob/master/contracts/ownership/Secondary.sol) to create a "secondary" contract that allows a "primary" contract to manage it.
 
 Let's learn about Role-Based Access Control!
 
@@ -54,7 +54,7 @@ An alternative to single-concern `Ownable` is role based access control (RBAC), 
 
 For example, a `MintableToken` could have a `minter` role that decides who can mint tokens (which could be assigned to a Crowdsale). It could also have a `namer` role that allows changing the name or symbol of the token (for whatever reason). RBAC gives you much more flexibility over who can do what and is generally recommended for applications that need more configurability. If you're experienced with web development, the vast majority of access control systems are role-based: some users are normal users, some are moderators, and some can be company employee admins.
 
-OpenZeppelin provides [contracts/access/rbac/Roles.sol](https://github.com/OpenZeppelin/openzeppelin-solidity/blob/master/contracts/access/rbac/Roles.sol) for implementing role-based access control.
+OpenZeppelin provides [contracts/access/Roles.sol](https://github.com/OpenZeppelin/openzeppelin-solidity/blob/master/contracts/access/Roles.sol) for implementing role-based access control.
 
 Here's an example of using `Roles` in our token example above, we'll use it to implement a token that can be minted by `Minters` and renamed by `Namers`:
 
@@ -70,7 +70,7 @@ contract MyToken is DetailedERC20, StandardToken {
     constructor(
         string name,
         string symbol,
-        uint256 decimals,
+        uint8 decimals,
         address[] minters,
         address[] namers,
     )

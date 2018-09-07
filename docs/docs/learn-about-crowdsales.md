@@ -69,7 +69,7 @@ One of the first decisions you have to make is "how do I get these tokens to use
 In the default scenario, your crowdsale must own the tokens that are sold. You can send the crowdsale tokens through a variety of methods, but here's what it looks like in Solidity:
 
 ```solidity
-ERC20(tokenAddress).transfer(CROWDSALE_ADDRESS, SOME_TOKEN_AMOUNT);
+IERC20(tokenAddress).transfer(CROWDSALE_ADDRESS, SOME_TOKEN_AMOUNT);
 ```
 
 Then when you deploy your crowdsale, simply tell it about the token
@@ -84,11 +84,11 @@ new Crowdsale(
 
 ### Minted Crowdsale
 
-To use a `MintedCrowdsale`, your token must also be a `MintableToken` that the crowdsale has permission to mint from. This can look like:
+To use a `MintedCrowdsale`, your token must also be a `ERC20Mintable` token that the crowdsale has permission to mint from. This can look like:
 
 ```solidity
-contract MyToken is MintableToken {
-    // ...
+contract MyToken is ERC20, ERC20Mintable {
+    // ... see "Learn About Tokens" for more info
 }
 
 contract MyCrowdsale is MintedCrowdsale, Crowdsale {
@@ -110,7 +110,7 @@ constract MyCrowdsaleDeployer {
         public
     {
         // create a mintable token
-        MintableToken token = new MyToken();
+        ERC20Mintable token = new MyToken();
 
         // create the crowdsale and tell it about the token
         Crowdsale crowdsale = new Crowdsale(
@@ -149,7 +149,7 @@ contract MyCrowdsale is AllowanceCrowdsale, Crowdsale {
 Then after the crowdsale is created, don't forget to approve it to use your tokens!
 
 ```solidity
-ERC20(tokenAddress).approve(CROWDALE_ADDRESS, SOME_TOKEN_AMOUNT);
+IERC20(tokenAddress).approve(CROWDALE_ADDRESS, SOME_TOKEN_AMOUNT);
 ```
 
 ## Validation
@@ -188,9 +188,9 @@ contract MyCrowdsale is CappedCrowdsale, TimedCrowdsale, Crowdsale {
 
 ## Distribution
 
-There comes a time in every crowdsale's live where it must relinquish the tokens it's been entrusted with. It's you decision as to when that happens!
+There comes a time in every crowdsale's live where it must relinquish the tokens it's been entrusted with. It's your decision as to when that happens!
 
-The default behavior is to release tokens as participants purchase them, but sometimes that may not be desireable. For example, what if we want to give users a refund if we don't hit a minimum raised in the sale? Or, maybe we want to wait until after the sale is over before users can claim their tokens and start trading them, perhaps for compliance reasons?
+The default behavior is to release tokens as participants purchase them, but sometimes that may not be desirable. For example, what if we want to give users a refund if we don't hit a minimum raised in the sale? Or, maybe we want to wait until after the sale is over before users can claim their tokens and start trading them, perhaps for compliance reasons?
 
 OpenZeppelin is here to make that easy!
 
