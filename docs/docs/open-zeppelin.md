@@ -11,6 +11,7 @@ With OpenZeppelin, you can build distributed applications, protocols and organiz
 
 > NOTE: New to smart contract development? Check our [introductory guide](https://medium.com/zeppelin-blog/the-hitchhikers-guide-to-smart-contracts-in-ethereum-848f08001f05#.cox40d2ut).
 
+👉 Ready to [get started](/api/docs/get-started.html)?
 
 ## Security
 OpenZeppelin is meant to provide secure, tested and community-audited code, but please use common sense when doing anything that deals with real money! We take no responsibility for your implementation decisions and any security problem you might experience.
@@ -28,9 +29,9 @@ Building a distributed application, protocol or organization with OpenZeppelin?
 Interested in contributing to OpenZeppelin?
 
 - Framework proposal and roadmap: https://medium.com/zeppelin-blog/zeppelin-framework-proposal-and-development-roadmap-fdfa9a3a32ab
-- Issue tracker: https://github.com/OpenZeppelin/zeppelin-solidity/issues
-- Contribution guidelines: https://github.com/OpenZeppelin/zeppelin-solidity/blob/master/CONTRIBUTING.md
-- Wiki: https://github.com/OpenZeppelin/zeppelin-solidity/wiki
+- Issue tracker: https://github.com/OpenZeppelin/openzeppelin-solidity/issues
+- Contribution guidelines: https://github.com/OpenZeppelin/openzeppelin-solidity/blob/master/CONTRIBUTING.md
+- Wiki: https://github.com/OpenZeppelin/openzeppelin-solidity/wiki
 
 ## Collaborating organizations and audits by OpenZeppelin
 - [Golem](https://golem.network/)
@@ -51,4 +52,4 @@ among others...
 
 
 ## License
-Code released under the [MIT License](https://github.com/OpenZeppelin/zeppelin-solidity/blob/master/LICENSE).
+Code released under the [MIT License](https://github.com/OpenZeppelin/openzeppelin-solidity/blob/master/LICENSE).
