@@ -11,12 +11,17 @@
   },
   "docs-api": {
     "ACCESS": [
-      "access_SignatureBouncer",
-      "access_Whitelist"
+      "access_Roles"
     ],
-    "ACCESS / RBAC": [
-      "access_rbac_RBAC",
-      "access_rbac_Roles"
+    "ACCESS / ROLES": [
+      "access_roles_CapperRole",
+      "access_roles_MinterRole",
+      "access_roles_PauserRole",
+      "access_roles_SignerRole"
+    ],
+    "BOUNTIES": [
+      "bounties_BreakInvariantBounty",
+      "bounties_BreakInvariantBounty_Target"
     ],
     "CROWDSALE": [
       "crowdsale_Crowdsale"
@@ -36,34 +41,36 @@
     "CROWDSALE / VALIDATION": [
       "crowdsale_validation_CappedCrowdsale",
       "crowdsale_validation_IndividuallyCappedCrowdsale",
-      "crowdsale_validation_TimedCrowdsale",
-      "crowdsale_validation_WhitelistedCrowdsale"
+      "crowdsale_validation_TimedCrowdsale"
+    ],
+    "CRYPTOGRAPHY": [
+      "cryptography_ECDSA",
+      "cryptography_MerkleProof"
+    ],
+    "DRAFTS": [
+      "drafts_ERC20Migrator",
+      "drafts_SignatureBouncer",
+      "drafts_TokenVesting"
+    ],
+    "DRAFTS / ERC1046": [
+      "drafts_ERC1046_TokenMetadata_ERC20TokenMetadata",
+      "drafts_ERC1046_TokenMetadata_ERC20WithMetadata"
     ],
     "INTROSPECTION": [
       "introspection_ERC165",
-      "introspection_SupportsInterfaceWithLookup"
+      "introspection_ERC165Checker",
+      "introspection_IERC165"
     ],
     "LIFECYCLE": [
-      "lifecycle_Destructible",
-      "lifecycle_Pausable",
-      "lifecycle_TokenDestructible"
+      "lifecycle_Pausable"
     ],
     "MATH": [
       "math_Math",
       "math_SafeMath"
     ],
     "OWNERSHIP": [
-      "ownership_CanReclaimToken",
-      "ownership_Claimable",
-      "ownership_Contactable",
-      "ownership_DelayedClaimable",
-      "ownership_HasNoContracts",
-      "ownership_HasNoEther",
-      "ownership_HasNoTokens",
-      "ownership_Heritable",
-      "ownership_NoOwner",
       "ownership_Ownable",
-      "ownership_Superuser"
+      "ownership_Secondary"
     ],
     "PAYMENT": [
       "payment_ConditionalEscrow",
@@ -72,46 +79,36 @@
       "payment_RefundEscrow",
       "payment_SplitPayment"
     ],
-    "PROPOSALS / ERC1046": [
-      "proposals_ERC1046_TokenMetadata_ERC20TokenMetadata",
-      "proposals_ERC1046_TokenMetadata_ERC20WithMetadata"
-    ],
     "TOKEN / ERC20": [
-      "token_ERC20_BasicToken",
-      "token_ERC20_BurnableToken",
-      "token_ERC20_CappedToken",
-      "token_ERC20_DetailedERC20",
       "token_ERC20_ERC20",
-      "token_ERC20_ERC20Basic",
-      "token_ERC20_MintableToken",
-      "token_ERC20_PausableToken",
-      "token_ERC20_RBACMintableToken",
+      "token_ERC20_ERC20Burnable",
+      "token_ERC20_ERC20Capped",
+      "token_ERC20_ERC20Detailed",
+      "token_ERC20_ERC20Mintable",
+      "token_ERC20_ERC20Pausable",
+      "token_ERC20_IERC20",
       "token_ERC20_SafeERC20",
-      "token_ERC20_StandardBurnableToken",
-      "token_ERC20_StandardToken",
-      "token_ERC20_TokenTimelock",
-      "token_ERC20_TokenVesting"
+      "token_ERC20_TokenTimelock"
     ],
     "TOKEN / ERC721": [
-      "token_ERC721_DeprecatedERC721",
       "token_ERC721_ERC721",
-      "token_ERC721_ERC721Basic",
-      "token_ERC721_ERC721BasicToken",
+      "token_ERC721_ERC721Burnable",
+      "token_ERC721_ERC721Enumerable",
+      "token_ERC721_ERC721Full",
       "token_ERC721_ERC721Holder",
-      "token_ERC721_ERC721Receiver",
-      "token_ERC721_ERC721Token",
-      "token_ERC721_ERC721_ERC721Enumerable",
-      "token_ERC721_ERC721_ERC721Metadata"
+      "token_ERC721_ERC721Metadata",
+      "token_ERC721_ERC721Mintable",
+      "token_ERC721_ERC721Pausable",
+      "token_ERC721_IERC721",
+      "token_ERC721_IERC721Enumerable",
+      "token_ERC721_IERC721Full",
+      "token_ERC721_IERC721Metadata",
+      "token_ERC721_IERC721Receiver"
     ],
-    "UNCATEGORIZED": [
-      "AddressUtils",
-      "AutoIncrementing",
-      "Bounty",
-      "Bounty_Target",
-      "ECRecovery",
-      "LimitBalance",
-      "MerkleProof",
-      "ReentrancyGuard"
+    "UTILS": [
+      "utils_Address",
+      "utils_AutoIncrementing",
+      "utils_ReentrancyGuard"
     ]
   }
 }
