@@ -62,7 +62,7 @@ contract DoggoToken is ERC20, ERC20Detailed, ERC20Mintable, ERC20Burnable {
 }
 ```
 
-And now the minters in my `minters` array (like DOGGO Network multisig) can mint tokens to the dogsitters in exchange for watching the nice doggos while their owners leave for vacation. The token is `ERC20Burnable` we want to have the ability to stake DOGGO tokens on our reputation—if the dogsitter does a bad job, their tokens get burned!
+And now the minters in my `minters` array (like the DOGGO Network multisig) can mint tokens to the dogsitters in exchange for watching the nice doggos while their owners leave for vacation. The token is `ERC20Burnable` we want to have the ability to stake DOGGO tokens on our reputation—if the dogsitter does a bad job, their tokens get burned!
 
 ### A Note on `decimals`
 
@@ -80,7 +80,7 @@ We've discussed how you can make a _fungible_ token using ERC20, but what if not
 
 Let's see what contracts OpenZeppelin provides for helping us work with ERC721:
 
-- The `IERC721`, `IERC721Metadata`, `IERC721Enumerable` interfaces are part of the [IERC721.sol](https://github.com/OpenZeppelin/openzeppelin-solidity/blob/master/contracts/token/ERC721/IERC721.sol) file, which document the interfaces. An `ERC721Full` token combines all 3 interfaces for maximum compatibility.
+- The `IERC721`, `IERC721Metadata`, `IERC721Enumerable` interfaces are part of the [IERC721.sol](https://github.com/OpenZeppelin/openzeppelin-solidity/blob/master/contracts/token/ERC721/IERC721.sol) file, which document the interfaces.
 - [ERC721](https://github.com/OpenZeppelin/openzeppelin-solidity/blob/master/contracts/token/ERC721/ERC721.sol) — is the full implementation of ERC721, and the contract you'll most likely be inheriting from.
 - [IERC721Receiver](https://github.com/OpenZeppelin/openzeppelin-solidity/blob/master/contracts/token/ERC721/IERC721Receiver.sol) — in some cases, it's beneficial to be 100% certain that a contract knows how to handle ERC721 tokens (imagine sending an in-game item to an exchange address that can't send it back!). When using `safeTransferFrom()`, the contract checks to see that the receiver is an `IERC721Receiver`, which implies that it knows how to handle ERC721 tokens. If you're writing a contract that accepts 721 tokens, you'll want to implement this interface.
 - [ERC721Mintable] — like the ERC20 version, ERC721Mintable allows addresses with the `Minter` role to mint tokens.
@@ -92,16 +92,17 @@ We'll use these contracts to tokenize the time of our dogsitters: when a dogsitt
 Here's what tokenized dogsitter timeframes might look like:
 
 ```solidity
-contract DoggoTime is ERC721Full {
+contract DoggoTime is ERC721 {
+    using Counter for Counter.Index;
 
-    uint256 private nextTokenId = 1;
+    Counter.Index private tokenId;
 
     constructor(
         string name,
         string symbol,
 
     )
-        ERC721Full(name, symbol)
+        ERC721(name, symbol)
         public
     {}
 
@@ -111,7 +112,7 @@ contract DoggoTime is ERC721Full {
         public
         returns (bool)
     {
-        _mint(msg.sender, nextTokenId++);
+        _mint(msg.sender, tokenId.next());
         _setTokenURI(tokenURI);
         return true;
     }
