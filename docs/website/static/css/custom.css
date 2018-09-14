@@ -41,8 +41,15 @@ body {
   height: 60px !important;
 }
 
+article a {
+  color: #5AA5FF !important;
+}
+
+article h2 {
+  font-size: 1.8em !important;
+}
+
 header {
-  height: 60px !important;
   padding: 0px 20px;
   box-shadow: 0 1px 4px 0 rgba(0, 0, 0, 0.1);
 }
@@ -57,9 +64,17 @@ header > a > h3 {
 }
 
 h1, h2, h3, h4 {
-  color: #5AA5FF;
+  color: unset;
 }
 
+blockquote {
+background-color: #F0F7FF;
+border-left: 2px solid #5AA5FF;
+}
+
+blockquote p{
+padding: 0 0 0 10px !important;
+}
 
 
 .headerTitle {
@@ -69,6 +84,11 @@ h1, h2, h3, h4 {
 .postHeader {
   padding: 0px;
   box-shadow: none;
+}
+
+.postHeader h1{
+  font-size: 2.4em !important;
+  content: unset !important;
 }
 
 .logo {
@@ -142,8 +162,77 @@ nav.toc .toggleNav ul li a:hover{
     color: black;
 }
 
-footer{
-  
+.mainContainer p, .mainContainer ul{
+font-size: 1em;
+font-weight: 300;
+line-height: 1.4;
+letter-spacing: 0.6px;
+}
+
+.mainContainer .wrapper .post .postHeader h1{
+  line-height: 1.4;
+}
+
+
+.container .wrapper h2 {
+    color: unset;
+    margin-top: 1.8em !important;
+}
+
+.container .wrapper h3 {
+    margin-top: 1.7em !important;
+    font-weight: bold;
+    color: unset;
+}
+
+.functions .item .name {
+    background-color: #e6e6e6 !important;
+    padding: 6px 6px 6px 15px;
+    margin-bottom: 10px;
+    font-weight: 800;
+}
+
+.container .wrapper h4{
+    color: black;
+}
+
+.item .function h4{
+    background-color: red !important;
+    padding: 100px;
+}
+
+pre code{
+background-color: #F0F7FF;
+border-left: 4px solid #D2D2D2;
+font-family: "SFMono-Regular",source-code-pro,Menlo,Monaco,Consolas,"Roboto Mono","Droid Sans Mono","Liberation Mono",Consolas,"Courier New",Courier,monospace !important;
+font-size: 1em;
+}
+
+.hljs{
+  padding: 2em !important;
+}
+
+.docs-prevnext {
+    margin-top: 50px;
+}
+
+.button{
+border: none;
+color: #5AA5FF;
+font-size: 0.7em;
+padding: 6px;
+}
+
+.button:hover {
+    background: #5AA5FF;
+    color: #fff;
+}
+
+.docsNavContainer {
+    background: #fafafa;}
+
+footer {
+
   
 }
 
@@ -194,7 +283,7 @@ footer .sitemap  {
 
 .contract-doc .reference .item {
   position: relative;
-  border: solid #ecf0f2 1px !important;
+  border: solid #e6e6e6 1px !important;
 }
 
 .contract-doc .reference .item .anchor-marker {
