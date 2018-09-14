@@ -23,6 +23,10 @@
   font-family: Lato, "Helvetica Neue", Helvetica, Arial, sans-serif!important;
 }
 
+body {
+  background-color: #fafafa;
+  }
+
 .fixedHeaderContainer {
   padding: 0;
   margin: 0;
@@ -40,7 +44,7 @@
 header {
   height: 60px !important;
   padding: 0px 20px;
-  border-bottom: solid #ecf0f2 1px !important;
+  box-shadow: 0 1px 4px 0 rgba(0, 0, 0, 0.1);
 }
 
 header > a {
@@ -48,9 +52,15 @@ header > a {
 }
 
 header > a > h3 {
-  color: #5CB6E4 !important;
+  color: #5AA5FF !important;
   margin-bottom: -4px;
 }
+
+h1, h2, h3, h4 {
+  color: #5AA5FF;
+}
+
+
 
 .headerTitle {
   width: 0px;
@@ -58,6 +68,7 @@ header > a > h3 {
 
 .postHeader {
   padding: 0px;
+  box-shadow: none;
 }
 
 .logo {
@@ -82,30 +93,87 @@ header > a > h3 {
   font-weight: 300;
 }
 
-.navigationSlider .slidingNav ul li a:focus, .navigationSlider .slidingNav ul li a:hover {
-  color: rgb(50, 50, 50);
-  background: white;
-  text-decoration: none;
+nav.toc .toggleNav{
+    background: unset !important;
 }
+
+nav.toc .toggleNav .navGroup {
+    background: unset !important;
+    margin: 0;
+}
+
+nav.toc .logotoggleNav .navGroup.navGroupActive {
+    background: #fafafa;
+    padding-bottom: 30px;
+}
+
+nav.toc .toggleNav ul li a{
+  margin-left: 0;
+  padding-left: 20px !important;
+  color: #979797;
+  }
+
+.navigationSlider .slidingNav ul li a:focus, .navigationSlider .slidingNav ul li a:hover {
+  
+}
+
 
 nav.toc .toggleNav .navGroup h3 {
   font-size: 12px !important;
+      padding: 0px;
+}
+
+nav.toc .toggleNav .navGroup.navGroupActive h3 {
+    background: #fafafa;
+    color: #5AA5FF;
+}
+
+nav.toc .toggleNav ul li a.navItemActive {
+    color: #5AA5FF;
+    font-weight: 800;
+    border-left-style: solid;
+    border-left-width: 2px;
+    border-right-color: #5AA5FF!important;
+    background-color: #F8FBFF;
+
+}
+
+nav.toc .toggleNav ul li a:hover{
+    color: black;
+}
+
+footer{
+  
+  
 }
 
 footer.nav-footer {
-  background: white;
+  opacity: 1 !important;
+  background-color: #1a1a1a !important;
+    padding-top: 5rem !important;
+  padding-bottom: 6rem !important;;
 }
 
 footer.nav-footer h5 {
-  color: rgb(50, 50, 50);
+  color: white;
+
 }
 
-footer.nav-footer a, footer.nav-footer section {
-  color: rgb(139, 139, 139);
+footer.nav-footer a{
+  color: #8C8C8C;
 }
 
 footer.nav-footer a:focus, footer.nav-footer a:hover {
-  color: rgb(50, 50, 50);
+  color: white;
+}
+
+footer .sitemap  {
+    padding-bottom: 2rem !important;;
+  border-bottom: solid 1px #ffffff60;
+  }
+
+.nav-home, .fbOpenSource{
+    opacity: 1 !important;
 }
 
 .contract-doc .contract .base-contracts {
@@ -195,3 +263,5 @@ footer.nav-footer a:focus, footer.nav-footer a:hover {
 .label-modifiers, .label-parameters, .label-return {
   font-weight: 800;
 }
+
+
