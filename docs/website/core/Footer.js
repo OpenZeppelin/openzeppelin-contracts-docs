@@ -23,18 +23,8 @@ class Footer extends React.Component {
     return (
       <footer className="nav-footer" id="footer">
         <section className="sitemap">
-          <a href={this.props.config.baseUrl} className="nav-home">
-            {this.props.config.footerIcon && (
-              <img
-                src={this.props.config.baseUrl + this.props.config.footerIcon}
-                alt={this.props.config.title}
-                width="66"
-                height="58"
-              />
-            )}
-          </a>
           <div>
-            <h5>Docs</h5>
+            <h5> <a href={this.props.config.baseUrl} className="">Docs</a></h5>
             <a href="#">
               API Reference
             </a>
@@ -82,7 +72,10 @@ class Footer extends React.Component {
           />
         </a>
         <section className="copyright">
-          Copyright &copy; {currentYear} Zeppelin
+          Copyright &copy; {currentYear} <a
+          href="https://zeppelin.solutions"
+          target="_blank"
+          className="fbOpenSource1">Zeppelin</a>
         </section>
       </footer>
     );
