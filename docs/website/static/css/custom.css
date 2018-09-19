@@ -2,7 +2,7 @@
 
 @media (max-width: 735px) {
   header > a > img {
-    width: 100%;
+    width: 50%;
   }
 
   .fixedHeaderContainer header h2 {
@@ -20,7 +20,7 @@
 }
 
 * {
-  font-family: Lato, "Helvetica Neue", Helvetica, Arial, sans-serif!important;
+  font-family: Lato, "Helvetica Neue", Helvetica, Arial, sans-serif;
 }
 
 body {
@@ -42,7 +42,8 @@ body {
 }
 
 article a {
-  color: #5AA5FF !important;
+  color: #43a4ff;
+  font-weight: 400 !important;
 }
 
 article h2 {
@@ -93,7 +94,7 @@ padding: 0 0 0 10px !important;
 
 .logo {
   margin: auto 10px;
-  width: 225px;
+  width: 219px;
   height: 30px!important;
 }
 
@@ -113,33 +114,33 @@ padding: 0 0 0 10px !important;
   font-weight: 300;
 }
 
+.navigationSlider .slidingNav ul li a:focus, .navigationSlider .slidingNav ul li a:hover {
+    background: #06A4FF;
+    color: white;
+}
+
 nav.toc .toggleNav{
     background: unset !important;
 }
 
 nav.toc .toggleNav .navGroup {
     background: unset !important;
-    margin: 0;
 }
 
-nav.toc .logotoggleNav .navGroup.navGroupActive {
-    background: #fafafa;
-    padding-bottom: 30px;
+    nav.toc .toggleNav ul {
+    padding-right: 0px;
 }
+
 
 nav.toc .toggleNav ul li a{
   margin-left: 0;
   padding-left: 20px !important;
   color: #979797;
+  font-size: 1.1em;
   }
 
-.navigationSlider .slidingNav ul li a:focus, .navigationSlider .slidingNav ul li a:hover {
-  
-}
-
-
 nav.toc .toggleNav .navGroup h3 {
-  font-size: 12px !important;
+  font-size: 0.9em !important;
       padding: 0px;
 }
 
@@ -150,7 +151,6 @@ nav.toc .toggleNav .navGroup.navGroupActive h3 {
 
 nav.toc .toggleNav ul li a.navItemActive {
     color: #5AA5FF;
-    font-weight: 800;
     border-left-style: solid;
     border-left-width: 2px;
     border-right-color: #5AA5FF!important;
@@ -166,7 +166,6 @@ nav.toc .toggleNav ul li a:hover{
 font-size: 1em;
 font-weight: 300;
 line-height: 1.4;
-letter-spacing: 0.6px;
 }
 
 .mainContainer .wrapper .post .postHeader h1{
@@ -177,23 +176,25 @@ letter-spacing: 0.6px;
 .container .wrapper h2 {
     color: unset;
     margin-top: 1.8em !important;
+    border-bottom: solid #E4E4E4 1px;
+    font-size: 10em;
 }
 
 .container .wrapper h3 {
-    margin-top: 1.7em !important;
+    margin-top: 2em;
     font-weight: bold;
     color: unset;
 }
 
+.container .wrapper h4{
+    color: black;
+}
+
+
 .functions .item .name {
-    background-color: #e6e6e6 !important;
     padding: 6px 6px 6px 15px;
     margin-bottom: 10px;
     font-weight: 800;
-}
-
-.container .wrapper h4{
-    color: black;
 }
 
 .item .function h4{
@@ -202,7 +203,7 @@ letter-spacing: 0.6px;
 }
 
 pre code{
-background-color: #F0F7FF;
+background-color: #E1F4FF;
 border-left: 4px solid #D2D2D2;
 font-family: "SFMono-Regular",source-code-pro,Menlo,Monaco,Consolas,"Roboto Mono","Droid Sans Mono","Liberation Mono",Consolas,"Courier New",Courier,monospace !important;
 font-size: 1em;
@@ -230,6 +231,10 @@ padding: 6px;
 
 .docsNavContainer {
     background: #fafafa;}
+
+ .docsNavContainer nav.toc .navBreadcrumb {
+    height: 34px;
+}   
 
 footer {
 
@@ -292,7 +297,7 @@ footer .sitemap  {
 }
 
 .contract-doc .reference .item .body {
-  padding: 15px;
+  padding: 1em 0 1em 0;
 }
 
 .contract-doc .reference .item .body hr {
@@ -314,11 +319,42 @@ footer .sitemap  {
   padding-left: 0;
 }
 
-.contract-doc .events .item,
-.contract-doc .modifiers .item,
-.contract-doc .functions .item {
+.contract-doc .reference .item {
   margin-bottom: 20px;
-  border: 1px solid #d0d9e0;
+  border-radius: 5px;
+  box-shadow: 0 1px 4px 0 #fafafa;
+  padding: 15px 15px 15px 15px;
+
+}
+
+.contract-doc .reference .item h4, .contract-doc .reference .item code{
+border-radius: 3px;
+padding: 2px 5px !important;
+}
+
+.contract-doc .reference .item code{
+display:unset;
+border-radius: 3px;
+padding: 2px 5px !important;
+}
+
+.reference h4{
+display:unset;
+}
+
+.event h4{
+background-color: #E2FDCC!important;
+color: #55A422!important;
+}
+
+.modifiers h4{
+background-color: #E5E4FF!important;
+color: #6D7EBB!important;
+}
+
+.functions h4{
+background-color: #FFE2CC!important;
+color: #F07267!important;
 }
 
 .contract-doc .events .item dd,
@@ -333,7 +369,7 @@ footer .sitemap  {
   background-color: #dee3e9;
   padding: 6px 6px 6px 15px;
   margin-bottom: 10px;
-  font-weight: 800;
+  font-weight: 400;
 }
 
 .contract-doc .events .description,
