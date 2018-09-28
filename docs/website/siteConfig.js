@@ -13,20 +13,20 @@ const siteConfig = {
   projectName: 'api',
   headerLinks: [
     {
-      href: 'https://openzeppelin.org',
-      label: 'Home',
-    },
-    {
       doc: 'open-zeppelin',
-      label: 'Docs',
+      label: 'Guides',
     },
     {
       doc: 'crowdsale_Crowdsale',
-      label: 'API',
+      label: 'API Reference',
     },
     {
       href: 'https://github.com/OpenZeppelin',
       label: 'Github',
+    },
+    {
+      href: 'https://openzeppelin.org',
+      label: 'Website',
     },
   ],
   headerIcon: 'img/openzeppelin-logo.svg',
