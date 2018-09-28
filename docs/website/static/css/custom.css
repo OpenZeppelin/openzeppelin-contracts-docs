@@ -83,6 +83,9 @@ blockquote p{
 padding: 0 0 0 10px !important;
 }
 
+.index a{
+  font-family: monospace;
+}
 
 .headerTitle {
   width: 0px;
