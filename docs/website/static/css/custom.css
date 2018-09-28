@@ -148,14 +148,15 @@ nav.toc .toggleNav ul li{
 nav.toc .toggleNav ul li a{
   margin-left: 0;
   padding-left: 20px !important;
-  padding-bottom: 2px;
+  padding-bottom: 1px;
   color: #979797;
   font-size: 1.1em;
   }
 
 nav.toc .toggleNav .navGroup h3 {
+  line-height: 1em;
   font-size: 0.9em !important;
-      padding: 0px 0px 5px 0px;
+  padding: 0px 0px 5px 0px;
 }
 
 nav.toc .toggleNav .navGroup.navGroupActive h3 {
@@ -169,8 +170,6 @@ nav.toc .toggleNav ul li a.navItemActive {
     border-left-style: solid;
     border-left-width: 2px;
     border-right-color: #5AA5FF!important;
-    background-color: #F8FBFF;
-
 }
 
 nav.toc .toggleNav ul li a:hover{
