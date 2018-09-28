@@ -24,6 +24,11 @@
   font-family: Lato, "Helvetica Neue", Helvetica, Arial, sans-serif;
 }
 
+code {
+  background-color: #F0F7FF;
+  box-shadow: none;
+}
+
 body {
   background-color: #fafafa;
   }

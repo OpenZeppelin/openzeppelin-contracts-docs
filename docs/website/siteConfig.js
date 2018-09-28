@@ -33,7 +33,7 @@ const siteConfig = {
   footerIcon: 'img/openzeppelin-symbol.svg',
   favicon: 'img/favicon.png',
   colors: {
-    primaryColor: '#5CB6E4',
+    primaryColor: '#5AA5FF',
     secondaryColor: 'white',
   },
   copyright: 'Copyright © 2018 Smart Contract Solutions',
