@@ -11,7 +11,7 @@ const siteConfig = require(process.cwd() + '/siteConfig.js');
 
 class Index extends React.Component {
   render () {
-    const script = `window.location.replace("${docUrl('open-zeppelin.html')}")`;
+    const script = `window.location.replace("${docUrl('get-started.html')}")`;
     return (
       <script dangerouslySetInnerHTML={{ __html: script }}></script>
     );

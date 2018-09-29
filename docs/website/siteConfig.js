@@ -13,7 +13,7 @@ const siteConfig = {
   projectName: 'api',
   headerLinks: [
     {
-      doc: 'open-zeppelin',
+      doc: 'get-started',
       label: 'Guides',
     },
     {

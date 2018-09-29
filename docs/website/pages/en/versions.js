@@ -34,7 +34,7 @@ class Versions extends React.Component {
                 <tr>
                   <th>{latestVersion}</th>
                   <td>
-                    <a href={`${siteConfig.baseUrl}docs/open-zeppelin.html`}>Documentation</a>
+                    <a href={`${siteConfig.baseUrl}docs/get-started.html`}>Documentation</a>
                   </td>
                   <td>
                     <a href={getVersionReleaseNotes(latestVersion)}>Release Notes</a>
@@ -52,7 +52,7 @@ class Versions extends React.Component {
                       <tr key={version}>
                         <th>{version}</th>
                         <td>
-                          <a href={`${siteConfig.baseUrl}docs/${version}/open-zeppelin.html`}>Documentation</a>
+                          <a href={`${siteConfig.baseUrl}docs/${version}/get-started.html`}>Documentation</a>
                         </td>
                         <td>
                           <a href={getVersionReleaseNotes(version)}>Release Notes</a>
