@@ -92,7 +92,7 @@ We'll use these contracts to tokenize the time of our dogsitters: when a dogsitt
 Here's what tokenized dogsitter timeframes might look like:
 
 ```solidity
-contract DoggoTime is ERC721, ERC721Metadata {
+contract DoggoTime is ERC721Full {
     using Counter for Counter.Index;
     Counter.Index private tokenId;
 
@@ -100,8 +100,7 @@ contract DoggoTime is ERC721, ERC721Metadata {
         string name,
         string symbol,
     )
-        ERC721Metadata(name, symbol)
-        ERC721()
+        ERC721Full(name, symbol)
         public
     {}
 
