@@ -43,8 +43,6 @@
       "cryptography_MerkleProof"
     ],
     "DRAFTS": [
-      "drafts_BreakInvariantBounty",
-      "drafts_BreakInvariantBounty_Target",
       "drafts_Counter",
       "drafts_ERC20Migrator",
       "drafts_SignatureBouncer",
@@ -71,11 +69,13 @@
       "ownership_Secondary"
     ],
     "PAYMENT": [
-      "payment_ConditionalEscrow",
-      "payment_Escrow",
-      "payment_PullPayment",
-      "payment_RefundEscrow",
-      "payment_SplitPayment"
+      "payment_PaymentSplitter",
+      "payment_PullPayment"
+    ],
+    "PAYMENT / ESCROW": [
+      "payment_escrow_ConditionalEscrow",
+      "payment_escrow_Escrow",
+      "payment_escrow_RefundEscrow"
     ],
     "TOKEN / ERC20": [
       "token_ERC20_ERC20",
@@ -95,6 +95,7 @@
       "token_ERC721_ERC721Full",
       "token_ERC721_ERC721Holder",
       "token_ERC721_ERC721Metadata",
+      "token_ERC721_ERC721MetadataMintable",
       "token_ERC721_ERC721Mintable",
       "token_ERC721_ERC721Pausable",
       "token_ERC721_IERC721",
@@ -105,6 +106,7 @@
     ],
     "UTILS": [
       "utils_Address",
+      "utils_Arrays",
       "utils_ReentrancyGuard"
     ]
   }

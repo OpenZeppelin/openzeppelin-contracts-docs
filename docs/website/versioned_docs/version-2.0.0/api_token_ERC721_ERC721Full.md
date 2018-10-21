@@ -1,0 +1,7 @@
+---
+id: version-2.0.0-token_ERC721_ERC721Full
+title: ERC721Full
+original_id: token_ERC721_ERC721Full
+---
+
+<div class="contract-doc"><div class="contract"><h2 class="contract-header"><span class="contract-kind">contract</span> ERC721Full</h2><p class="base-contracts"><span>is</span> <a href="token_ERC721_ERC721.html">ERC721</a><span>, </span><a href="token_ERC721_ERC721Enumerable.html">ERC721Enumerable</a><span>, </span><a href="token_ERC721_ERC721Metadata.html">ERC721Metadata</a></p><p class="description">See https://github.com/ethereum/EIPs/blob/master/EIPS/eip-721.md.</p><div class="source">Source: <a href="https://github.com/OpenZeppelin/zeppelin-solidity/blob/v2.0.0/contracts/token/ERC721/ERC721Full.sol" target="_blank">token/ERC721/ERC721Full.sol</a></div></div><div class="index"><h2>Index</h2><ul><li><a href="token_ERC721_ERC721Full.html#">fallback</a></li></ul></div><div class="reference"><h2>Reference</h2><div class="functions"><h3>Functions</h3><ul><li><div class="item function"><span id="fallback" class="anchor-marker"></span><h4 class="name">fallback</h4><div class="body"><code class="signature">function <strong></strong><span>(string name, string symbol) </span><span>public </span></code><hr/><dl><dt><span class="label-modifiers">Modifiers:</span></dt><dd></dd><dt><span class="label-parameters">Parameters:</span></dt><dd><div><code>name</code> - string</div><div><code>symbol</code> - string</div></dd></dl></div></div></li></ul></div></div></div>
