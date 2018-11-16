@@ -22,7 +22,7 @@ An ERC20 token is a contract that keeps track of a `mapping(address => uint256)`
 
 OpenZeppelin provides a few different ERC20-related contracts. Here are the core contracts you'll almost definitely be using:
 
-- [IER20](https://github.com/OpenZeppelin/openzeppelin-solidity/blob/master/contracts/token/ERC20/IERC20.sol) — defines the interface that all ERC20 token implementations should conform to
+- [IERC20](https://github.com/OpenZeppelin/openzeppelin-solidity/blob/master/contracts/token/ERC20/IERC20.sol) — defines the interface that all ERC20 token implementations should conform to
 - [ERC20](https://github.com/OpenZeppelin/openzeppelin-solidity/blob/master/contracts/token/ERC20/ERC20.sol) — the base implementation of the ERC20 interface
 - [ERC20Detailed](https://github.com/OpenZeppelin/openzeppelin-solidity/blob/master/contracts/token/ERC20/ERC20Detailed.sol) — the `name()`, `symbol()`, and `decimals()` getters are optional in the original standard, so `ERC20Detailed` adds that information to your token.
 
