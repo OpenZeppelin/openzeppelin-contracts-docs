@@ -113,10 +113,10 @@ constract MyCrowdsaleDeployer {
         ERC20Mintable token = new MyToken();
 
         // create the crowdsale and tell it about the token
-        Crowdsale crowdsale = new Crowdsale(
+        Crowdsale crowdsale = new MyCrowdsale(
             1,               // rate, still in TKNbits
             msg.sender,      // send Ether to the deployer
-            address(token),  // the token
+            address(token)   // the token
         );
         // transfer the minter role from this contract (the default)
         // to the crowdsale, so it can mint tokens
