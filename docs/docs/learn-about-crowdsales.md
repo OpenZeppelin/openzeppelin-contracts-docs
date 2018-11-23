@@ -91,7 +91,7 @@ contract MyToken is ERC20, ERC20Mintable {
     // ... see "Learn About Tokens" for more info
 }
 
-contract MyCrowdsale is MintedCrowdsale, Crowdsale {
+contract MyCrowdsale is Crowdsale, MintedCrowdsale {
     constructor(
         uint256 rate,    // rate in TKNbits
         address wallet,
@@ -113,14 +113,15 @@ constract MyCrowdsaleDeployer {
         ERC20Mintable token = new MyToken();
 
         // create the crowdsale and tell it about the token
-        Crowdsale crowdsale = new Crowdsale(
+        Crowdsale crowdsale = new MyCrowdsale(
             1,               // rate, still in TKNbits
             msg.sender,      // send Ether to the deployer
-            address(token),  // the token
+            address(token)   // the token
         );
         // transfer the minter role from this contract (the default)
         // to the crowdsale, so it can mint tokens
-        token.transferMinterRole(address(crowdsale));
+        token.addMinter(address(crowdsale));
+        token.renounceMinter();
     }
 }
 ```
