@@ -189,7 +189,7 @@ contract MyCrowdsale is CappedCrowdsale, TimedCrowdsale, Crowdsale {
 
 ## Distribution
 
-There comes a time in every crowdsale's live where it must relinquish the tokens it's been entrusted with. It's your decision as to when that happens!
+There comes a time in every crowdsale's life where it must relinquish the tokens it's been entrusted with. It's your decision as to when that happens!
 
 The default behavior is to release tokens as participants purchase them, but sometimes that may not be desirable. For example, what if we want to give users a refund if we don't hit a minimum raised in the sale? Or, maybe we want to wait until after the sale is over before users can claim their tokens and start trading them, perhaps for compliance reasons?
 
