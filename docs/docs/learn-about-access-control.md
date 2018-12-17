@@ -59,7 +59,7 @@ OpenZeppelin provides [contracts/access/Roles.sol](https://github.com/OpenZeppel
 Here's an example of using `Roles` in our token example above, we'll use it to implement a token that can be minted by `Minters` and renamed by `Namers`:
 
 ```solidity
-import "openzeppelin-solidity/contracts/access/rbac/Roles.sol";
+import "openzeppelin-solidity/contracts/access/Roles.sol";
 
 contract MyToken is DetailedERC20, StandardToken {
     using Roles for Roles.Role;
