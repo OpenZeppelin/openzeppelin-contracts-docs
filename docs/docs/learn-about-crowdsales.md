@@ -105,7 +105,7 @@ contract MyCrowdsale is Crowdsale, MintedCrowdsale {
     }
 }
 
-constract MyCrowdsaleDeployer {
+contract MyCrowdsaleDeployer {
     constructor()
         public
     {
