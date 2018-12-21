@@ -8,7 +8,7 @@ OpenZeppelin provides a ton of useful utilities that you can use in your project
 
 ## Cryptography
 
-- [ECDSA.sol](https://github.com/OpenZeppelin/openzeppelin-solidity/blob/master/contracts/cryptography/ECDSA.sol) — provides fucntions for recovering and managing Ethereum account ECDSA signatures:
+- [ECDSA.sol](https://github.com/OpenZeppelin/openzeppelin-solidity/blob/master/contracts/cryptography/ECDSA.sol) — provides functions for recovering and managing Ethereum account ECDSA signatures:
   - to use it, declare: `using ECDSA for bytes32;`
   - signatures are tightly packed, 65 byte `bytes` that look like `{v (1)} {r (32)} {s (32)}`
     - this is the default from `web3.eth.sign` so you probably don't need to worry about this format
