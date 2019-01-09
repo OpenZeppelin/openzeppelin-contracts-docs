@@ -16,7 +16,9 @@
       "access_roles_CapperRole",
       "access_roles_MinterRole",
       "access_roles_PauserRole",
-      "access_roles_SignerRole"
+      "access_roles_SignerRole",
+      "access_roles_WhitelistAdminRole",
+      "access_roles_WhitelistedRole"
     ],
     "CROWDSALE": [
       "crowdsale_Crowdsale"
@@ -24,7 +26,8 @@
     "CROWDSALE / DISTRIBUTION": [
       "crowdsale_distribution_FinalizableCrowdsale",
       "crowdsale_distribution_PostDeliveryCrowdsale",
-      "crowdsale_distribution_RefundableCrowdsale"
+      "crowdsale_distribution_RefundableCrowdsale",
+      "crowdsale_distribution_RefundablePostDeliveryCrowdsale"
     ],
     "CROWDSALE / EMISSION": [
       "crowdsale_emission_AllowanceCrowdsale",
@@ -36,7 +39,9 @@
     "CROWDSALE / VALIDATION": [
       "crowdsale_validation_CappedCrowdsale",
       "crowdsale_validation_IndividuallyCappedCrowdsale",
-      "crowdsale_validation_TimedCrowdsale"
+      "crowdsale_validation_PausableCrowdsale",
+      "crowdsale_validation_TimedCrowdsale",
+      "crowdsale_validation_WhitelistCrowdsale"
     ],
     "CRYPTOGRAPHY": [
       "cryptography_ECDSA",
@@ -46,6 +51,7 @@
       "drafts_Counter",
       "drafts_ERC20Migrator",
       "drafts_SignatureBouncer",
+      "drafts_SignedSafeMath",
       "drafts_TokenVesting"
     ],
     "DRAFTS / ERC1046": [

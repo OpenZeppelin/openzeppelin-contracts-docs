@@ -22,6 +22,7 @@
   "dependencies": {
     "shelljs": "^0.8.1",
     "solidity-docgen": "^0.1.0",
-    "tmp": "0.0.33"
+    "tmp": "0.0.33",
+    "yarn": "^1.12.3"
   }
 }
