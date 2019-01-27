@@ -62,7 +62,7 @@ One of the first decisions you have to make is "how do I get these tokens to use
 
 - (default) — The Crowdsale contract owns tokens and simply transfers tokens from its own ownership to users that purchase them.
 - [MintedCrowdsale](https://github.com/OpenZeppelin/openzeppelin-solidity/blob/master/contracts/crowdsale/emission/MintedCrowdsale.sol) — The Crowdsale mints tokens when a purchase is made.
-- [AllowanceCrowdsale](https://github.com/OpenZeppelin/openzeppelin-solidity/blob/master/contracts/crowdsale/emission/MintedCrowdsale.sol) — The Crowdsale is granted an allowance to another wallet (like a Multisig) that already owns the tokens to be sold in the crowdsale.
+- [AllowanceCrowdsale](https://github.com/OpenZeppelin/openzeppelin-solidity/blob/master/contracts/crowdsale/emission/AllowanceCrowdsale.sol) — The Crowdsale is granted an allowance to another wallet (like a Multisig) that already owns the tokens to be sold in the crowdsale.
 
 ### Default Emission
 
