@@ -24,7 +24,7 @@ Building a distributed application, protocol or organization with OpenZeppelin?
 
 - Take a look at the guides: https://blog.zeppelin.solutions/guides/home
 
-- Ask for help and follow progress at: https://slack.openzeppelin.org
+- Ask for help and follow progress at: https://forum.zeppelin.solutions
 
 Interested in contributing to OpenZeppelin?
 

@@ -39,8 +39,8 @@ class Footer extends React.Component {
               target="_blank">
               Stack Overflow
             </a>
-            <a href="https://slack.openzeppelin.org/" target="_blank">
-              Chat on Slack
+            <a href="https://forum.zeppelin.solutions/" target="_blank">
+              Discuss in the forum
             </a>
           </div>
           <div>

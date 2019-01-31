@@ -28,6 +28,10 @@ const siteConfig = {
       href: 'https://openzeppelin.org',
       label: 'Website',
     },
+    {
+      href: 'https://forum.zeppelin.solutions',
+      label: 'Forum',
+    },
   ],
   headerIcon: 'img/openzeppelin-logo.svg',
   footerIcon: 'img/openzeppelin-symbol.svg',
