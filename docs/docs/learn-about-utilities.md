@@ -86,7 +86,7 @@ Want to split some payments between multiple people? Maybe you have an app that 
 
 In solidity, there are some security concerns with blindly sending money to accounts, since it allows them to execute arbitrary code. You can read up on these security concerns in the [Ethereum Smart Contract Best Practices](https://consensys.github.io/smart-contract-best-practices/) website. One of the ways to fix re-rentrancy and stalling problems is, instead of immediately sending Ether to accounts that need it, you can use [`PullPayment`](https://github.com/OpenZeppelin/openzeppelin-solidity/blob/master/contracts/payment/PullPayment.sol), which offers an `asyncSend` function for sending money to something and requesting that they `withdraw()` it later.
 
-If you want to Escrow some funds, check out [`Escrow`](https://github.com/OpenZeppelin/openzeppelin-solidity/blob/master/contracts/payment/Escrow.sol) and [`ConditionalEscrow`](https://github.com/OpenZeppelin/openzeppelin-solidity/blob/master/contracts/payment/ConditionalEscrow.sol) for governing the release of some escrowed Ether.
+If you want to Escrow some funds, check out [`Escrow`](https://github.com/OpenZeppelin/openzeppelin-solidity/blob/master/contracts/payment/escrow/Escrow.sol) and [`ConditionalEscrow`](https://github.com/OpenZeppelin/openzeppelin-solidity/blob/master/contracts/payment/escrow/ConditionalEscrow.sol) for governing the release of some escrowed Ether.
 
 ### Misc
 
