@@ -52,7 +52,7 @@ Building a distributed application, protocol or organization with OpenZeppelin?
 
 - Read documentation: https://openzeppelin.org/api/docs/open-zeppelin.html
 
-- Ask for help and follow progress at: https://slack.openzeppelin.org/
+- Ask for help and follow progress at: https://forum.zeppelin.solutions
 
 Interested in contributing to OpenZeppelin?
 

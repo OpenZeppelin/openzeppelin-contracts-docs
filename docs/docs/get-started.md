@@ -48,4 +48,4 @@ For example, [The Hitchhiker’s Guide to Smart Contracts in Ethereum](https://b
 
 For a more in-depth dive, you may read the guide [Designing the architecture for your Ethereum application](https://blog.zeppelin.solutions/designing-the-architecture-for-your-ethereum-application-9cec086f8317), which discusses how to better structure your application and its relationship to the real world.
 
-You may also ask for help or follow OpenZeppelin's progress in the community [Slack](https://slack.openzeppelin.org), or read OpenZeppelin's full API on this website.
+You may also ask for help or follow OpenZeppelin's progress in the community [forum](https://forum.zeppelin.solutions), or read OpenZeppelin's full API on this website.
