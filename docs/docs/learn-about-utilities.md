@@ -92,6 +92,6 @@ If you want to Escrow some funds, check out [`Escrow`](https://github.com/OpenZe
 
 Want to check if an address is a contract? Use [`AddressUtils`](https://github.com/OpenZeppelin/openzeppelin-solidity/blob/master/contracts/utils/Address.sol) and `AddressUtils#isContract()`.
 
-Want to keep track of some numbers that increment by 1 every time you want another one? Check out [`Counter`](https://github.com/OpenZeppelin/openzeppelin-solidity/blob/master/contracts/utils/Counter.sol). This is especailly useful for creating incremental ERC721 tokenIds like we did in the last section.
+Want to keep track of some numbers that increment by 1 every time you want another one? Check out [`Counter`](https://github.com/OpenZeppelin/openzeppelin-solidity/blob/master/contracts/drafts/Counters.sol). This is especailly useful for creating incremental ERC721 tokenIds like we did in the last section.
 
 
