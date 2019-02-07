@@ -81,7 +81,7 @@ Easy!
 
 ## Payment
 
-Want to split some payments between multiple people? Maybe you have an app that sends 30% of art purchases to the original creator and 70% of the profits to the current owner; you can build that with [`SplitPayment`](https://github.com/OpenZeppelin/openzeppelin-solidity/blob/master/contracts/payment/SplitPayment.sol)!.
+Want to split some payments between multiple people? Maybe you have an app that sends 30% of art purchases to the original creator and 70% of the profits to the current owner; you can build that with [`PaymentSplitter`](https://github.com/OpenZeppelin/openzeppelin-solidity/blob/master/contracts/payment/PaymentSplitter.sol)!.
 
 In solidity, there are some security concerns with blindly sending money to accounts, since it allows them to execute arbitrary code. You can read up on these security concerns in the [Ethereum Smart Contract Best Practices](https://consensys.github.io/smart-contract-best-practices/) website. One of the ways to fix reentrancy and stalling problems is, instead of immediately sending Ether to accounts that need it, you can use [`PullPayment`](https://github.com/OpenZeppelin/openzeppelin-solidity/blob/master/contracts/payment/PullPayment.sol), which offers an `asyncSend` function for sending money to something and requesting that they `withdraw()` it later.
 
@@ -92,5 +92,3 @@ If you want to Escrow some funds, check out [`Escrow`](https://github.com/OpenZe
 Want to check if an address is a contract? Use [`Address`](https://github.com/OpenZeppelin/openzeppelin-solidity/blob/master/contracts/utils/Address.sol) and `Address#isContract()`.
 
 Want to keep track of some numbers that increment by 1 every time you want another one? Check out [`Counter`](https://github.com/OpenZeppelin/openzeppelin-solidity/blob/v2.1.2/contracts/drafts/Counter.sol). This is especially useful for creating incremental ERC721 tokenIds like we did in the last section.
-
-
