@@ -50,11 +50,10 @@ contract DoggoToken is ERC20, ERC20Detailed, ERC20Mintable, ERC20Burnable {
     constructor(
         string name,
         string symbol,
-        uint8 decimals,
-        address[] minters
+        uint8 decimals
     )
         ERC20Burnable()
-        ERC20Mintable(minters)
+        ERC20Mintable()
         ERC20Detailed(name, symbol, decimals)
         ERC20()
         public
@@ -62,7 +61,7 @@ contract DoggoToken is ERC20, ERC20Detailed, ERC20Mintable, ERC20Burnable {
 }
 ```
 
-And now the minters in my `minters` array (like the DOGGO Network multisig) can mint tokens to the dogsitters in exchange for watching the nice doggos while their owners leave for vacation. The token is `ERC20Burnable` we want to have the ability to stake DOGGO tokens on our reputation—if the dogsitter does a bad job, their tokens get burned!
+`ERC20Mintable` allows to add minters via `addMinter(addr)`, so they (like the DOGGO Network multisig) can mint tokens to the dogsitters in exchange for watching the nice doggos while their owners leave for vacation. The token is `ERC20Burnable` we want to have the ability to stake DOGGO tokens on our reputation—if the dogsitter does a bad job, their tokens get burned!
 
 ### A Note on `decimals`
 
