@@ -10,7 +10,7 @@ Crowdsales have a bunch of different properties, but here are some important one
   - Does your crowdsale sell tokens at a fixed price?
   - Does the price change over time or as a function of demand?
 - Emission
-  - How is this token actually send to participants?
+  - How is this token actually sent to participants?
 - Validation — Who is allowed to purchase tokens?
   - Are there KYC / AML checks?
   - Is there a max cap on tokens?

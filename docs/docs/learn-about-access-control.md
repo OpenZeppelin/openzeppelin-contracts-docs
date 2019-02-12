@@ -64,8 +64,8 @@ import "openzeppelin-solidity/contracts/access/Roles.sol";
 contract MyToken is DetailedERC20, StandardToken {
     using Roles for Roles.Role;
 
-    Role private minters;
-    Role private namers;
+    Roles.Role private minters;
+    Roles.Role private namers;
 
     constructor(
         string name,
