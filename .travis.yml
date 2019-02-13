@@ -10,7 +10,14 @@ before_install:
   - sudo apt-get install --yes solc
 
 script:
-  - if [[ "${TRAVIS_PULL_REQUEST}" = 'false' && "${TRAVIS_EVENT_TYPE}" = 'api' ]]; then ./scripts/ci/bump_and_push "${VERSION}"; fi
+  - |
+    if [[ "${TRAVIS_PULL_REQUEST}" = 'false' && "${TRAVIS_EVENT_TYPE}" = 'api' ]]; then
+      ./scripts/ci/bump_and_push "${VERSION}";
+    else
+      cd docs/website
+      yarn install
+      npm run build
+    fi
 
 deploy:
   provider: pages
