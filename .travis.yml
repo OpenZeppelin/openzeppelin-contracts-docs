@@ -13,10 +13,8 @@ script:
   - if [[ "${TRAVIS_PULL_REQUEST}" = 'false' && "${TRAVIS_EVENT_TYPE}" = 'api' ]]; then ./scripts/ci/bump_and_push "${VERSION}"; fi
 
 deploy:
-  provider: s3
-  access_key_id: "AKIAJLHM2QHNSX3YPQ6Q"
-  secret_access_key: $AWS_SECRET_KEY
-  bucket: "openzeppelin.org"
+  provider: pages
+  github-token: $GH_TOKEN
   skip_cleanup: true
-  local_dir: docs/website/build/api
-  upload-dir: api
+  local_dir: docs/website/build/
+  target-branch: site
