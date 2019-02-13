@@ -16,5 +16,5 @@ deploy:
   provider: pages
   github-token: $GH_TOKEN
   skip_cleanup: true
-  local_dir: docs/website/build/
+  local-dir: docs/website/build/
   target-branch: site
