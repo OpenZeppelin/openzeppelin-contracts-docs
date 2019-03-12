@@ -1,4 +1,2 @@
-node_modules/
-docs/docs
-docs/node_modules
-docs/website/build
+node_modules
+build
