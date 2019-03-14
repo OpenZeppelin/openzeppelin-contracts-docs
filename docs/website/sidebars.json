@@ -48,15 +48,15 @@
       "cryptography_MerkleProof"
     ],
     "DRAFTS": [
-      "drafts_Counter",
+      "drafts_Counters",
       "drafts_ERC20Migrator",
+      "drafts_ERC20Snapshot",
       "drafts_SignatureBouncer",
       "drafts_SignedSafeMath",
       "drafts_TokenVesting"
     ],
     "DRAFTS / ERC1046": [
-      "drafts_ERC1046_TokenMetadata_ERC20TokenMetadata",
-      "drafts_ERC1046_TokenMetadata_ERC20WithMetadata"
+      "drafts_ERC1046_ERC20Metadata"
     ],
     "INTROSPECTION": [
       "introspection_ERC165",
