@@ -23,19 +23,15 @@ const siteConfig = {
   headerLinks: [
     {
       href: '/',
-      label: 'Docs',
-    },
-    {
-      href: 'https://github.com/OpenZeppelin',
-      label: 'Github',
-    },
-    {
-      href: 'https://openzeppelin.org',
-      label: 'Website',
+      label: 'Learn',
     },
     {
       href: 'https://forum.zeppelin.solutions',
-      label: 'Forum',
+      label: 'Discuss',
+    },
+    {
+      href: 'https://github.com/OpenZeppelin/openzeppelin-solidity',
+      label: 'Contribute',
     },
   ],
   onPageNav: 'separate',
