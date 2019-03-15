@@ -22,7 +22,7 @@ const siteConfig = {
   repoUrl: 'https://github.com/OpenZeppelin/openzeppelin-solidity',
   headerLinks: [
     {
-      doc: 'get-started',
+      href: '/',
       label: 'Docs',
     },
     {

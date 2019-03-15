@@ -1,25 +1,23 @@
-/**
- * Copyright (c) 2018-present, OpenZeppelin.
- * Copyright (c) 2017, Facebook, Inc.
- *
- * This source code is licensed under the MIT license found in the
- * LICENSE file in the root directory of this source tree.
- */
-
 const React = require('react');
-const siteConfig = require(process.cwd() + '/siteConfig.js');
 
-class Index extends React.Component {
-  render () {
-    const script = `window.location.replace("${docUrl('get-started.html')}")`;
-    return (
-      <script dangerouslySetInnerHTML={{ __html: script }}></script>
-    );
-  }
+const { docs } = require(`${process.cwd()}/sidebars.json`);
+
+const firstCategory = Object.keys(docs)[0];
+const firstPage = docs[firstCategory][0];
+
+// being conservative here to ensure the script below is safe
+if (/[^\w\d\-]/.test(firstPage)) {
+  throw new Error(`Unsupported doc id ${firstPage}`);
 }
 
-function docUrl (doc, language) {
-  return siteConfig.baseUrl + 'docs/' + (language ? language + '/' : '') + doc;
+class Index extends React.Component {
+  render() {
+    return (
+      <script type="text/javascript" dangerouslySetInnerHTML={{__html: `
+        window.location.href = '/${firstPage}';
+      `}}/>
+    );
+  }
 }
 
 module.exports = Index;
