@@ -20,11 +20,7 @@ const siteConfig = {
   headerLinks: [
     {
       doc: 'get-started',
-      label: 'Guides',
-    },
-    {
-      doc: 'crowdsale_Crowdsale',
-      label: 'API Reference',
+      label: 'Docs',
     },
     {
       href: 'https://github.com/OpenZeppelin',
