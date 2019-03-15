@@ -8,7 +8,7 @@
 const path = require('path');
 const process = require('process');
 
-const docsiteRelativeDocsPath = process.env['DOCS_PATH'] || 'docs';
+const docsiteRelativeDocsPath = process.env['DOCS_PATH'] || 'demo-docs';
 const customDocsPath = path.relative('..', docsiteRelativeDocsPath);
 
 const siteConfig = {
