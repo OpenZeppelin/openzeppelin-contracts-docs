@@ -14,9 +14,12 @@ const customDocsPath = path.relative('..', docsiteRelativeDocsPath);
 const siteConfig = {
   title: 'OpenZeppelin',
   tagline: 'OpenZeppelin is an open framework of reusable and secure smart contracts in the Solidity language.',
-  url: 'https://openzeppelin.org',
-  baseUrl: '/api/',
-  projectName: 'api',
+  url: 'https://docs.openzeppelin.org',
+  baseUrl: '/',
+  docsUrl: '',
+  organizationName: 'OpenZeppelin',
+  projectName: 'openzeppelin-solidity',
+  repoUrl: 'https://github.com/OpenZeppelin/openzeppelin-solidity',
   headerLinks: [
     {
       doc: 'get-started',
@@ -52,7 +55,6 @@ const siteConfig = {
     'https://maxcdn.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css',
     'https://fonts.googleapis.com/css?family=Lato:100,200,300,400,500,700,400italic,700italic',
   ],
-  repoUrl: 'https://github.com/OpenZeppelin/zeppelin-solidity',
   customDocsPath,
 };
 
