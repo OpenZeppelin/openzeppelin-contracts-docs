@@ -38,6 +38,7 @@ const siteConfig = {
       label: 'Forum',
     },
   ],
+  onPageNav: 'separate',
   headerIcon: 'img/openzeppelin-logo.svg',
   footerIcon: 'img/openzeppelin-symbol.svg',
   favicon: 'img/favicon.png',
