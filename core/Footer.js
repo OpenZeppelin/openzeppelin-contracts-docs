@@ -24,23 +24,23 @@ class Footer extends React.Component {
       <footer className="nav-footer" id="footer">
         <section className="sitemap">
           <div>
-            <h5> <a href={this.props.config.baseUrl} className="">Docs</a></h5>
-            <a href="#">
-              API Reference
+            <h5>Ecosystem</h5>
+            <a href="https://zeppelin.solutions">
+              Zeppelin
             </a>
-            <a href="https://blog.zeppelin.solutions/guides/home">
-              Guides
+            <a href="https://zeppelinos.org">
+              ZeppelinOS
             </a>
           </div>
           <div>
             <h5>Community</h5>
+            <a href="https://forum.zeppelin.solutions/" target="_blank">
+              Discourse
+            </a>
             <a
               href="https://stackoverflow.com/questions/tagged/open-zeppelin"
               target="_blank">
               Stack Overflow
-            </a>
-            <a href="https://forum.zeppelin.solutions/" target="_blank">
-              Discuss in the forum
             </a>
           </div>
           <div>
