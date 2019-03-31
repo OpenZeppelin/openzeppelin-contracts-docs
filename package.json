@@ -2,6 +2,9 @@
   "name": "openzeppelin-docsite",
   "version": "0.2.0",
   "private": true,
+  "bin": {
+    "openzeppelin-docsite-run": "run.js"
+  },
   "scripts": {
     "start": "docusaurus-start",
     "build": "docusaurus-build"
