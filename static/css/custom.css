@@ -122,18 +122,13 @@ footer .sitemap  {
   border-bottom: solid 1px #767676;
 }
 
-
-
-
-
-
-.mainContainer .contract-index {
+.contracts .contract-index {
   max-width: 500px;
   margin-top: 2em;
   margin-bottom: 2em;
 }
 
-.mainContainer .contract-index .contract-index-title {
+.contracts .contract-index .contract-index-title {
   margin-top: 0;
   text-transform: uppercase;
   font-size: 0.7em;
@@ -141,7 +136,7 @@ footer .sitemap  {
   color: gray;
 }
 
-.mainContainer .contract-index > ul {
+.contracts .contract-index > ul {
   background-color: #fafafa;
   border: 1px solid #f0f0f0;
   border-radius: 5px;
@@ -149,42 +144,42 @@ footer .sitemap  {
   list-style: none;
 }
 
-.mainContainer .contract-index code {
+.contracts .contract-index code {
   background-color: transparent;
   padding: 0;
 }
 
-.mainContainer .contract-index code a {
+.contracts .contract-index code a {
   color: black;
 }
 
-.mainContainer h2 {
+.contracts h2 {
   text-transform: uppercase;
   font-size: .9em;
   margin-top: 3em;
   color: gray;
 }
 
-.mainContainer h3 {
+.contracts h3 {
   font-size: 2em;
 }
 
-.mainContainer h3 code {
+.contracts h3 code {
   background-color: transparent;
   padding: 0;
 }
 
-.mainContainer h3:first-of-type {
+.contracts h2 + h3 {
   margin-top: 0;
 }
 
-.mainContainer h4 {
+.contracts h4 {
   border-bottom: 1px solid #f0f0f0;
   padding-bottom: .4em;
   font-size: 1.1em;
 }
 
-.mainContainer h4 code {
+.contracts h4 code {
   background-color: transparent;
   padding: 0;
 }
