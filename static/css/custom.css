@@ -188,3 +188,8 @@ footer .sitemap  {
 .toc-headings .toc-headings {
     padding-left: 0;
 }
+
+.function-signature .return-arrow,
+.function-signature .return-type {
+  opacity: 0.75;
+}
