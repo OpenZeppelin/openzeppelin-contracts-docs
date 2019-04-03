@@ -45,7 +45,7 @@ const siteConfig = {
   copyright: 'Copyright © 2018 Smart Contract Solutions',
   gaTrackingId: 'UA-85043059-1',
   highlight: {
-    theme: 'default',
+    theme: 'atom-one-dark',
   },
   scripts: ['https://buttons.github.io/buttons.js'],
   stylesheets: [

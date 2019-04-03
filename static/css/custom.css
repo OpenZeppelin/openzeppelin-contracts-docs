@@ -92,17 +92,6 @@ code {
     padding: 100px;
 }
 
-pre code {
-  background-color: #E1F4FF;
-  border-left: 4px solid #D2D2D2;
-  font-family: "SFMono-Regular",source-code-pro,Menlo,Monaco,Consolas,"Roboto Mono","Droid Sans Mono","Liberation Mono",Consolas,"Courier New",Courier,monospace !important;
-  /* font-size: 1em; */
-}
-
-.hljs {
-  background-color: #ffff; 
-}
-
 .docs-prevnext {
     margin-top: 4em;
 }
