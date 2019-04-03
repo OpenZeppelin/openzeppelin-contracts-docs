@@ -2,10 +2,26 @@
 
 const path = require('path');
 const child_process = require('child_process');
+const assert = require('assert');
+
+assert(process.argv.length === 3, 'only one argument accepted');
+
+function exec(cmd, args, options) {
+  child_process.execFileSync(cmd, args, Object.assign({ stdio: 'inherit' }, options));
+}
 
 process.env.DOCS_PATH = path.resolve('docs');
 
-child_process.execFileSync('npm', ['run', process.argv[2]], {
+const command = process.argv[2];
+
+exec('npm', ['run', command], {
   cwd: __dirname,
-  stdio: 'inherit',
 });
+
+if (command === 'build') {
+  // move the built site from __dirname to cwd
+  const docusaurusOutDir = path.join(__dirname, 'build', 'openzeppelin-solidity');
+  const outDir = 'docsite-build';
+  exec('rm', ['-rf', outDir]);
+  exec('mv', [docusaurusOutDir, outDir]);
+}
