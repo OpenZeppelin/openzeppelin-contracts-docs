@@ -24,4 +24,5 @@ if (command === 'build') {
   const outDir = 'docsite-build';
   exec('rm', ['-rf', outDir]);
   exec('mv', [docusaurusOutDir, outDir]);
+  console.error(`Moved 'build' folder to '${outDir}'.`);
 }
