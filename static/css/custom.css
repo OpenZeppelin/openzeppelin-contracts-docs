@@ -144,6 +144,10 @@ footer .sitemap  {
   list-style: none;
 }
 
+.contracts .contract-index .inherited {
+  opacity: .5;
+}
+
 .contracts .contract-index code {
   background-color: transparent;
   padding: 0;
