@@ -76,22 +76,6 @@ code {
     color: #393939;
 }
 
-.mainContainer .wrapper h4 {
-    /* color: black; */
-}
-
-
-.functions .item .name {
-    padding: 6px 6px 6px 15px;
-    margin-bottom: 10px;
-    font-weight: 800;
-}
-
-.item .function h4 {
-    background-color: red !important;
-    padding: 100px;
-}
-
 .docs-prevnext {
     margin-top: 4em;
 }
