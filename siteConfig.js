@@ -20,6 +20,7 @@ const siteConfig = {
   organizationName: 'OpenZeppelin',
   projectName: 'openzeppelin-solidity',
   repoUrl: 'https://github.com/OpenZeppelin/openzeppelin-solidity',
+  disableHeaderTitle: true,
   headerLinks: [
     {
       href: '/',
