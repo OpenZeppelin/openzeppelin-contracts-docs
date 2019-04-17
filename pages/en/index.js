@@ -14,7 +14,7 @@ class Index extends React.Component {
   render() {
     return (
       <script type="text/javascript" dangerouslySetInnerHTML={{__html: `
-        window.location.href = '/${firstPage}.html';
+        window.location.href = '/${firstPage}';
       `}}/>
     );
   }
