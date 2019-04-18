@@ -6,7 +6,7 @@
   "scripts": {
     "gen-docs": "node scripts/gen-docs.js",
     "bump-docs": "node scripts/bump-docs.js",
-    "build": "node scripts/build.js",
+    "build": "sh scripts/get-solc-and-build.sh",
     "rebuild-docs": "cd docs/website && npm run build",
     "test": "echo \"Error: no test specified\" && exit 1"
   },
