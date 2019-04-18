@@ -4,7 +4,8 @@ set -o errexit
 
 # We use $DEPLOY_URL to detect the Netlify environment.
 if [[ -v DEPLOY_URL ]]; then
-  : ${NETLIFY_CACHE_DIR="/opt/buildhome/cache"}
+  : ${NETLIFY_BUILD_BASE="/opt/buildhome"}
+  : ${NETLIFY_CACHE_DIR="$NETLIFY_BUILD_BASE/cache"}
 else
   : ${NETLIFY_CACHE_DIR="$PWD"}
 fi
