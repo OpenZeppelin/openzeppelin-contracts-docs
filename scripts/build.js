@@ -23,7 +23,7 @@ function main(argv) {
     handleErrorCode(shell.exec(`git checkout -b ${tag} ${tag}`))
     handleErrorCode(shell.exec(`npx solidity-docgen ${repoDir} ${contractsDir} ${outputDir} --exclude mocks,examples`))
     shell.cd(websiteDir)
-    handleErrorCode(shell.exec(`yarn install`))
+    handleErrorCode(shell.exec(`npm install`))
     handleErrorCode(shell.exec('npm run build'))
   }
   finally {
