@@ -10,8 +10,28 @@ function exec(cmd, args, options) {
   child_process.execFileSync(cmd, args, Object.assign({ stdio: 'inherit' }, options));
 }
 
+function getVersion() {
+  function sh(cmd) {
+    try {
+      return child_process.execSync(cmd, {
+        stdio: ['inherit', 'pipe', 'ignore'],
+        encoding: 'utf8',
+      }).trim();
+    } catch (e) {
+      return undefined;
+    }
+  }
+
+  const getTag = () => sh('git describe --tags --exact-match');
+  const getBranch = () => sh('git symbolic-ref -q --short HEAD');
+  const getCommit = () => sh('git rev-parse -q --short HEAD');
+  const getPkgVersion = () => `v${require(path.resolve('package.json')).version}`;
+
+  return getTag() || getBranch() || getCommit() || getPkgVersion();
+}
+
 process.env.DOCS_PATH = path.resolve('docs');
-process.env.DOCS_VERSION = `v${require('./package.json').version}`;
+process.env.DOCS_VERSION = getVersion();
 
 const command = process.argv[2];
 
