@@ -11,6 +11,7 @@ function exec(cmd, args, options) {
 }
 
 process.env.DOCS_PATH = path.resolve('docs');
+process.env.DOCS_VERSION = `v${require('./package.json').version}`;
 
 const command = process.argv[2];
 

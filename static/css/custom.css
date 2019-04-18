@@ -13,13 +13,14 @@ body {
 
 /* BEGIN: Increase top bar height. */
 
-.navigationSlider .slidingNav ul {
-  margin-top: 60px;
+.fixedHeaderContainer a,
+.navigationSlider {
+  height: 44px;
 }
 
-.fixedHeaderContainer a,
-.navigationSlider .slidingNav ul li a {
-  height: 44px;
+.navigationSlider {
+  display: flex;
+  align-items: center;
 }
 
 .anchor {
@@ -27,8 +28,12 @@ body {
 }
 
 @media only screen and (min-width: 1024px) {
-  .navigationSlider .slidingNav ul {
-    margin-top: 0;
+  .navigationSlider .slidingNav ul li {
+    margin-left: .5em;
+  }
+
+  .navigationSlider .slidingNav ul li a {
+    border-radius: .25em;
   }
 
   .navPusher {
@@ -53,12 +58,22 @@ body {
 }
 
 .navigationSlider .slidingNav ul li a {
-  color: rgb(134, 134, 134);
+  color: #676767;
+  transition: background-color 0s;
 }
 
 .navigationSlider .slidingNav ul li a:focus,
 .navigationSlider .slidingNav ul li a:hover {
-    color: white;
+  color: white;
+}
+
+.navigationSlider .slidingNav ul li:first-child {
+  opacity: .7;
+}
+
+.navigationSlider .slidingNav ul li:first-child:hover,
+.navigationSlider .slidingNav ul li:first-child:focus {
+  opacity: 1;
 }
 
 code {

@@ -11,6 +11,8 @@ const process = require('process');
 const docsiteRelativeDocsPath = process.env['DOCS_PATH'] || 'demo-docs';
 const customDocsPath = path.relative('..', docsiteRelativeDocsPath);
 
+const version = process.env['DOCS_VERSION'] || 'vX.Y.Z';
+
 const siteConfig = {
   title: 'OpenZeppelin',
   tagline: 'OpenZeppelin is an open framework of reusable and secure smart contracts in the Solidity language.',
@@ -22,6 +24,10 @@ const siteConfig = {
   repoUrl: 'https://github.com/OpenZeppelin/openzeppelin-solidity',
   disableHeaderTitle: true,
   headerLinks: [
+    {
+      href: '/versions',
+      label: version,
+    },
     {
       href: '/',
       label: 'Learn',
