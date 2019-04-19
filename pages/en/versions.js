@@ -2,8 +2,6 @@ const React = require('react');
 
 const { Container } = require('../../core/CompLibrary');
 
-const { baseUrl } = require(process.cwd() + '/siteConfig');
-
 const oldSiteVersions = [
   '2.1.3', '2.1.2', '2.1.1',
   '1.12.0', '1.11.0', '1.10.0',
@@ -14,10 +12,6 @@ const oldSiteVersions = [
 }));
 
 const newVersions = [
-  {
-    tag: 'v2.3.0',
-    documentation: baseUrl,
-  },
   {
     tag: 'v2.2.0',
     documentation: `https://5ca2514b224a4200080bb4c3--openzeppelin-docs.netlify.com/docs/get-started`,
@@ -31,10 +25,18 @@ const versions = newVersions.concat(oldSiteVersions).map(version => (
 ));
 
 function Versions(props) {
+  const version = process.env['DOCS_VERSION'];
+  const isRelease = (version[0] === 'v');
+
+  const current = (isRelease ? 'version' : 'commit') + ' ' + version;
+
   return (
     <Container className="mainContainer versionsContainer">
       <h1>Versions</h1>
 
+      <p>You are browsing the documentation for { current }.</p>
+
+      <h2>Past Versions</h2>
       <table className="versions">
         <tbody>
           {versions.map(

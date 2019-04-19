@@ -11,7 +11,7 @@ const process = require('process');
 const docsiteRelativeDocsPath = process.env['DOCS_PATH'] || 'demo-docs';
 const customDocsPath = path.relative('..', docsiteRelativeDocsPath);
 
-const version = process.env['DOCS_VERSION'] || 'vX.Y.Z';
+const version = process.env['DOCS_VERSION'] || 'Versions';
 
 const siteConfig = {
   title: 'OpenZeppelin',

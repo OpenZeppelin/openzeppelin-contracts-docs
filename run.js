@@ -22,12 +22,11 @@ function getVersion() {
     }
   }
 
-  const getTag = () => sh('git describe --tags --exact-match');
-  const getBranch = () => sh('git symbolic-ref -q --short HEAD');
+  const getTagVersion = () => sh('git describe --tags --exact-match --match "v*"');
   const getCommit = () => sh('git rev-parse -q --short HEAD');
   const getPkgVersion = () => `v${require(path.resolve('package.json')).version}`;
 
-  return getTag() || getBranch() || getCommit() || getPkgVersion();
+  return getTagVersion() || getCommit() || getPkgVersion();
 }
 
 process.env.DOCS_PATH = path.resolve('docs');
