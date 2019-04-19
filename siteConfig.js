@@ -17,7 +17,7 @@ const url = process.env['URL'] || 'https://docs.openzeppelin.org';
 
 const siteConfig = {
   title: 'OpenZeppelin',
-  tagline: 'OpenZeppelin is an open framework of reusable and secure smart contracts in the Solidity language.',
+  tagline: 'A battle-tested library of reusable smart contracts for Ethereum and other blockchains.',
   url,
   baseUrl: '/',
   docsUrl: '',
@@ -25,6 +25,7 @@ const siteConfig = {
   projectName: 'openzeppelin-solidity',
   repoUrl: 'https://github.com/OpenZeppelin/openzeppelin-solidity',
   disableHeaderTitle: true,
+  disableTitleTagline: true,
   headerLinks: [
     {
       href: '/versions',
