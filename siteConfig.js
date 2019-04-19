@@ -13,10 +13,12 @@ const customDocsPath = path.relative('..', docsiteRelativeDocsPath);
 
 const version = process.env['DOCS_VERSION'] || 'Versions';
 
+const url = process.env['URL'] || 'https://docs.openzeppelin.org';
+
 const siteConfig = {
   title: 'OpenZeppelin',
   tagline: 'OpenZeppelin is an open framework of reusable and secure smart contracts in the Solidity language.',
-  url: 'https://docs.openzeppelin.org',
+  url,
   baseUrl: '/',
   docsUrl: '',
   organizationName: 'OpenZeppelin',
