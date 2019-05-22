@@ -8,13 +8,13 @@ const oldSiteVersions = [
   '1.8.0', '1.7.0', '1.6.0', '1.5.0',
 ].map(ver => ({ 
   tag: `v${ver}`,
-  documentation: `https://5ca2514b224a4200080bb4c3--openzeppelin-docs.netlify.com/api/docs/${ver}/get-started`,
+  documentation: `https://5ca2514b224a4200080bb4c3--openzeppelin-docs2.netlify.com/api/docs/${ver}/get-started`,
 }));
 
 const newVersions = [
   {
     tag: 'v2.2.0',
-    documentation: `https://5ca2514b224a4200080bb4c3--openzeppelin-docs.netlify.com/docs/get-started`,
+    documentation: `https://5ca2514b224a4200080bb4c3--openzeppelin-docs2.netlify.com/docs/get-started`,
   },
 ];
   
