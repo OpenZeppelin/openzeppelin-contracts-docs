@@ -33,15 +33,15 @@ const siteConfig = {
     },
     {
       href: '/',
-      label: 'Learn',
+      label: 'Docs',
     },
     {
       href: 'https://forum.zeppelin.solutions',
-      label: 'Discuss',
+      label: 'Forum',
     },
     {
       href: 'https://github.com/OpenZeppelin/openzeppelin-solidity',
-      label: 'Contribute',
+      label: 'GitHub',
     },
   ],
   onPageNav: 'separate',
