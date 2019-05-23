@@ -6,7 +6,7 @@
     "openzeppelin-docsite-run": "run.js"
   },
   "scripts": {
-    "start": "env DOCS_VERSION=vX.Y.Z docusaurus-start",
+    "start": "scripts/start.sh",
     "build": "docusaurus-build",
     "postinstall": "node scripts/postinstall.js"
   },
