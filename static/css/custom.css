@@ -185,3 +185,10 @@ footer .sitemap  {
 .function-signature .return-type {
   opacity: 0.75;
 }
+
+.function-visibility {
+  font-size: 0.9rem;
+  font-weight: normal;
+  float: right;
+  color: #c0c0c0;
+}
