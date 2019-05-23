@@ -1,5 +1,6 @@
 const React = require('react');
 
+const version = process.env['DOCS_VERSION'];
 const { docs } = require(`${process.cwd()}/sidebars.json`);
 
 const firstCategory = Object.keys(docs)[0];
@@ -14,7 +15,7 @@ class Index extends React.Component {
   render() {
     return (
       <script type="text/javascript" dangerouslySetInnerHTML={{__html: `
-        window.location.href = '/${firstPage}';
+        window.location.href = '${version}/${firstPage}';
       `}}/>
     );
   }

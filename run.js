@@ -11,17 +11,6 @@ function exec(cmd, args, options) {
 }
 
 function getVersion() {
-  function sh(cmd) {
-    try {
-      return child_process.execSync(cmd, {
-        stdio: ['inherit', 'pipe', 'ignore'],
-        encoding: 'utf8',
-      }).trim();
-    } catch (e) {
-      return undefined;
-    }
-  }
-
   const getPkgVersion = () => `v${require(path.resolve('package.json')).version}`;
 
   return getPkgVersion();

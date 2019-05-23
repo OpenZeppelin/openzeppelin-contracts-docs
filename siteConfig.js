@@ -11,7 +11,12 @@ const process = require('process');
 const docsiteRelativeDocsPath = process.env['DOCS_PATH'] || 'demo-docs';
 const customDocsPath = path.relative('..', docsiteRelativeDocsPath);
 
-const version = process.env['DOCS_VERSION'] || 'Versions';
+if (process.env['DOCS_VERSION'] === undefined) {
+  console.error('Environment variable DOCS_VERSION not set');
+  process.exit(1);
+}
+
+const version = process.env['DOCS_VERSION'];
 
 const url = process.env['URL'] || 'https://docs.openzeppelin.org';
 
@@ -19,8 +24,8 @@ const siteConfig = {
   title: 'OpenZeppelin',
   tagline: 'A battle-tested library of reusable smart contracts for Ethereum and other blockchains.',
   url,
-  baseUrl: '/',
-  docsUrl: '',
+  baseUrl: `/`,
+  docsUrl: version,
   organizationName: 'OpenZeppelin',
   projectName: 'openzeppelin-solidity',
   repoUrl: 'https://github.com/OpenZeppelin/openzeppelin-solidity',
